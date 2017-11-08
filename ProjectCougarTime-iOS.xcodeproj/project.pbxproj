@@ -1,0 +1,638 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52590C3D1FB22F500053881C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52590C3C1FB22F4F0053881C /* AppDelegate.swift */; };
+		52590C421FB22F500053881C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52590C401FB22F500053881C /* Main.storyboard */; };
+		52590C441FB22F510053881C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52590C431FB22F510053881C /* Assets.xcassets */; };
+		52590C471FB22F510053881C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52590C451FB22F510053881C /* LaunchScreen.storyboard */; };
+		52590C521FB22F6C0053881C /* ProjectCougarTime_iOS_TeacherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52590C511FB22F6C0053881C /* ProjectCougarTime_iOS_TeacherTests.swift */; };
+		52590C5D1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52590C5C1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift */; };
+		52FD95391FB237B700ACF280 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD95381FB237B700ACF280 /* Student.swift */; };
+		52FD953B1FB23A9D00ACF280 /* StudentIDScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD953A1FB23A9D00ACF280 /* StudentIDScannerViewController.swift */; };
+		52FD953D1FB23C3500ACF280 /* StudentIDScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD953C1FB23C3500ACF280 /* StudentIDScannerView.swift */; };
+		52FD95401FB248E900ACF280 /* NSLocalizedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD953F1FB248E900ACF280 /* NSLocalizedString+Extensions.swift */; };
+		52FD95421FB2652900ACF280 /* TeacherLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD95411FB2652900ACF280 /* TeacherLoginViewController.swift */; };
+		52FD95441FB272D800ACF280 /* BiometricAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD95431FB272D800ACF280 /* BiometricAuthentication.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52590C4E1FB22F680053881C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52590BFD1FB22E5C0053881C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52590C391FB22F4F0053881C;
+			remoteInfo = "ProjectCougarTime-iOS-Teacher";
+		};
+		52590C591FB22F750053881C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52590BFD1FB22E5C0053881C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52590C391FB22F4F0053881C;
+			remoteInfo = "ProjectCougarTime-iOS-Teacher";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		52590C3A1FB22F4F0053881C /* Cougar Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cougar Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52590C3C1FB22F4F0053881C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52590C411FB22F500053881C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52590C431FB22F510053881C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52590C461FB22F510053881C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52590C481FB22F510053881C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52590C4D1FB22F670053881C /* ProjectCougarTime-iOS-TeacherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ProjectCougarTime-iOS-TeacherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52590C511FB22F6C0053881C /* ProjectCougarTime_iOS_TeacherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCougarTime_iOS_TeacherTests.swift; sourceTree = "<group>"; };
+		52590C531FB22F740053881C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52590C581FB22F740053881C /* ProjectCougarTime-iOS-TeacherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ProjectCougarTime-iOS-TeacherUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52590C5C1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCougarTime_iOS_TeacherUITests.swift; sourceTree = "<group>"; };
+		52590C5E1FB22F780053881C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52FD95381FB237B700ACF280 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		52FD953A1FB23A9D00ACF280 /* StudentIDScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentIDScannerViewController.swift; sourceTree = "<group>"; };
+		52FD953C1FB23C3500ACF280 /* StudentIDScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentIDScannerView.swift; sourceTree = "<group>"; };
+		52FD953F1FB248E900ACF280 /* NSLocalizedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLocalizedString+Extensions.swift"; sourceTree = "<group>"; };
+		52FD95411FB2652900ACF280 /* TeacherLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherLoginViewController.swift; sourceTree = "<group>"; };
+		52FD95431FB272D800ACF280 /* BiometricAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthentication.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52590C371FB22F4F0053881C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52590C4A1FB22F670053881C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52590C551FB22F740053881C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52590BFC1FB22E5C0053881C = {
+			isa = PBXGroup;
+			children = (
+				52590C3B1FB22F4F0053881C /* ProjectCougarTime-iOS-Teacher */,
+				52590C501FB22F680053881C /* ProjectCougarTime-iOS-TeacherTests */,
+				52590C5B1FB22F750053881C /* ProjectCougarTime-iOS-TeacherUITests */,
+				52590C061FB22E5E0053881C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52590C061FB22E5E0053881C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52590C3A1FB22F4F0053881C /* Cougar Time.app */,
+				52590C4D1FB22F670053881C /* ProjectCougarTime-iOS-TeacherTests.xctest */,
+				52590C581FB22F740053881C /* ProjectCougarTime-iOS-TeacherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52590C3B1FB22F4F0053881C /* ProjectCougarTime-iOS-Teacher */ = {
+			isa = PBXGroup;
+			children = (
+				52590C6B1FB230660053881C /* Modal */,
+				52590C6C1FB2307C0053881C /* View */,
+				52590C6D1FB230960053881C /* Controller */,
+				52FD953E1FB23C6500ACF280 /* Extensions */,
+				52FD95361FB232A900ACF280 /* Supporting Files */,
+			);
+			path = "ProjectCougarTime-iOS-Teacher";
+			sourceTree = "<group>";
+		};
+		52590C501FB22F680053881C /* ProjectCougarTime-iOS-TeacherTests */ = {
+			isa = PBXGroup;
+			children = (
+				52590C511FB22F6C0053881C /* ProjectCougarTime_iOS_TeacherTests.swift */,
+				52590C531FB22F740053881C /* Info.plist */,
+			);
+			path = "ProjectCougarTime-iOS-TeacherTests";
+			sourceTree = "<group>";
+		};
+		52590C5B1FB22F750053881C /* ProjectCougarTime-iOS-TeacherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52590C5C1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift */,
+				52590C5E1FB22F780053881C /* Info.plist */,
+			);
+			path = "ProjectCougarTime-iOS-TeacherUITests";
+			sourceTree = "<group>";
+		};
+		52590C6B1FB230660053881C /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				52FD95381FB237B700ACF280 /* Student.swift */,
+				52FD95431FB272D800ACF280 /* BiometricAuthentication.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		52590C6C1FB2307C0053881C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52590C401FB22F500053881C /* Main.storyboard */,
+				52FD953C1FB23C3500ACF280 /* StudentIDScannerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52590C6D1FB230960053881C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52FD95411FB2652900ACF280 /* TeacherLoginViewController.swift */,
+				52FD953A1FB23A9D00ACF280 /* StudentIDScannerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		52FD95361FB232A900ACF280 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52590C3C1FB22F4F0053881C /* AppDelegate.swift */,
+				52590C451FB22F510053881C /* LaunchScreen.storyboard */,
+				52590C431FB22F510053881C /* Assets.xcassets */,
+				52590C481FB22F510053881C /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52FD953E1FB23C6500ACF280 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				52FD953F1FB248E900ACF280 /* NSLocalizedString+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52590C391FB22F4F0053881C /* ProjectCougarTime-iOS-Teacher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52590C5F1FB22F780053881C /* Build configuration list for PBXNativeTarget "ProjectCougarTime-iOS-Teacher" */;
+			buildPhases = (
+				52590C361FB22F4F0053881C /* Sources */,
+				52590C371FB22F4F0053881C /* Frameworks */,
+				52590C381FB22F4F0053881C /* Resources */,
+				52FD95371FB2332200ACF280 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ProjectCougarTime-iOS-Teacher";
+			productName = "ProjectCougarTime-iOS-Teacher";
+			productReference = 52590C3A1FB22F4F0053881C /* Cougar Time.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52590C4C1FB22F670053881C /* ProjectCougarTime-iOS-TeacherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52590C621FB22F780053881C /* Build configuration list for PBXNativeTarget "ProjectCougarTime-iOS-TeacherTests" */;
+			buildPhases = (
+				52590C491FB22F670053881C /* Sources */,
+				52590C4A1FB22F670053881C /* Frameworks */,
+				52590C4B1FB22F670053881C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52590C4F1FB22F680053881C /* PBXTargetDependency */,
+			);
+			name = "ProjectCougarTime-iOS-TeacherTests";
+			productName = "ProjectCougarTime-iOS-TeacherTests";
+			productReference = 52590C4D1FB22F670053881C /* ProjectCougarTime-iOS-TeacherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52590C571FB22F740053881C /* ProjectCougarTime-iOS-TeacherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52590C651FB22F780053881C /* Build configuration list for PBXNativeTarget "ProjectCougarTime-iOS-TeacherUITests" */;
+			buildPhases = (
+				52590C541FB22F740053881C /* Sources */,
+				52590C551FB22F740053881C /* Frameworks */,
+				52590C561FB22F740053881C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52590C5A1FB22F750053881C /* PBXTargetDependency */,
+			);
+			name = "ProjectCougarTime-iOS-TeacherUITests";
+			productName = "ProjectCougarTime-iOS-TeacherUITests";
+			productReference = 52590C581FB22F740053881C /* ProjectCougarTime-iOS-TeacherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52590BFD1FB22E5C0053881C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Oakton High School";
+				TargetAttributes = {
+					52590C391FB22F4F0053881C = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					52590C4C1FB22F670053881C = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 52590C391FB22F4F0053881C;
+					};
+					52590C571FB22F740053881C = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 52590C391FB22F4F0053881C;
+					};
+				};
+			};
+			buildConfigurationList = 52590C001FB22E5C0053881C /* Build configuration list for PBXProject "ProjectCougarTime-iOS" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52590BFC1FB22E5C0053881C;
+			productRefGroup = 52590C061FB22E5E0053881C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52590C391FB22F4F0053881C /* ProjectCougarTime-iOS-Teacher */,
+				52590C4C1FB22F670053881C /* ProjectCougarTime-iOS-TeacherTests */,
+				52590C571FB22F740053881C /* ProjectCougarTime-iOS-TeacherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52590C381FB22F4F0053881C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52590C471FB22F510053881C /* LaunchScreen.storyboard in Resources */,
+				52590C441FB22F510053881C /* Assets.xcassets in Resources */,
+				52590C421FB22F500053881C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52590C4B1FB22F670053881C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52590C561FB22F740053881C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52FD95371FB2332200ACF280 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52590C361FB22F4F0053881C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52FD953B1FB23A9D00ACF280 /* StudentIDScannerViewController.swift in Sources */,
+				52FD95391FB237B700ACF280 /* Student.swift in Sources */,
+				52590C3D1FB22F500053881C /* AppDelegate.swift in Sources */,
+				52FD95441FB272D800ACF280 /* BiometricAuthentication.swift in Sources */,
+				52FD953D1FB23C3500ACF280 /* StudentIDScannerView.swift in Sources */,
+				52FD95421FB2652900ACF280 /* TeacherLoginViewController.swift in Sources */,
+				52FD95401FB248E900ACF280 /* NSLocalizedString+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52590C491FB22F670053881C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52590C521FB22F6C0053881C /* ProjectCougarTime_iOS_TeacherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52590C541FB22F740053881C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52590C5D1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52590C4F1FB22F680053881C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52590C391FB22F4F0053881C /* ProjectCougarTime-iOS-Teacher */;
+			targetProxy = 52590C4E1FB22F680053881C /* PBXContainerItemProxy */;
+		};
+		52590C5A1FB22F750053881C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52590C391FB22F4F0053881C /* ProjectCougarTime-iOS-Teacher */;
+			targetProxy = 52590C591FB22F750053881C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52590C401FB22F500053881C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52590C411FB22F500053881C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52590C451FB22F510053881C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52590C461FB22F510053881C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52590C2B1FB22E6D0053881C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52590C2C1FB22E6D0053881C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52590C601FB22F780053881C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/ProjectCougarTime-iOS-Teacher/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.fcps.oaktonhs.ProjectCougarTime-iOS-Teacher";
+				PRODUCT_NAME = "Cougar Time";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52590C611FB22F780053881C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/ProjectCougarTime-iOS-Teacher/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.fcps.oaktonhs.ProjectCougarTime-iOS-Teacher";
+				PRODUCT_NAME = "Cougar Time";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52590C631FB22F780053881C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ProjectCougarTime-iOS-TeacherTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.fcps.oaktonhs.ProjectCougarTime-iOS-TeacherTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectCougarTime-iOS-Teacher.app/ProjectCougarTime-iOS-Teacher";
+			};
+			name = Debug;
+		};
+		52590C641FB22F780053881C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ProjectCougarTime-iOS-TeacherTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.fcps.oaktonhs.ProjectCougarTime-iOS-TeacherTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectCougarTime-iOS-Teacher.app/ProjectCougarTime-iOS-Teacher";
+			};
+			name = Release;
+		};
+		52590C661FB22F780053881C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ProjectCougarTime-iOS-TeacherUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.fcps.oaktonhs.ProjectCougarTime-iOS-TeacherUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ProjectCougarTime-iOS-Teacher";
+			};
+			name = Debug;
+		};
+		52590C671FB22F780053881C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ProjectCougarTime-iOS-TeacherUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.fcps.oaktonhs.ProjectCougarTime-iOS-TeacherUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ProjectCougarTime-iOS-Teacher";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52590C001FB22E5C0053881C /* Build configuration list for PBXProject "ProjectCougarTime-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52590C2B1FB22E6D0053881C /* Debug */,
+				52590C2C1FB22E6D0053881C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52590C5F1FB22F780053881C /* Build configuration list for PBXNativeTarget "ProjectCougarTime-iOS-Teacher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52590C601FB22F780053881C /* Debug */,
+				52590C611FB22F780053881C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52590C621FB22F780053881C /* Build configuration list for PBXNativeTarget "ProjectCougarTime-iOS-TeacherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52590C631FB22F780053881C /* Debug */,
+				52590C641FB22F780053881C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52590C651FB22F780053881C /* Build configuration list for PBXNativeTarget "ProjectCougarTime-iOS-TeacherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52590C661FB22F780053881C /* Debug */,
+				52590C671FB22F780053881C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52590BFD1FB22E5C0053881C /* Project object */;
+}

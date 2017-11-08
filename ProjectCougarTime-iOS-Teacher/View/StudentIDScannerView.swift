@@ -1,0 +1,63 @@
+//
+//  StudentIDScannerView.swift
+//  ProjectCougarTime-iOS-Teacher
+//
+//  Created by Apollo Zhu on 11/7/17.
+//  Copyright © 2017 Oakton High School. All rights reserved.
+//
+
+import UIKit
+import AVKit
+
+class StudentIDScannerView: UIView {
+
+    // MARK: Capture Preview
+
+    override open class var layerClass: Swift.AnyClass {
+        return AVCaptureVideoPreviewLayer.self
+    }
+
+    private var previewLayer: AVCaptureVideoPreviewLayer {
+        return layer as! AVCaptureVideoPreviewLayer
+    }
+
+    var session: AVCaptureSession? {
+        get { return previewLayer.session }
+        set {
+            previewLayer.session = newValue
+            previewLayer.videoGravity = .resizeAspectFill
+        }
+    }
+
+    // MARK: Barcode Stroking
+
+    public var barcodeBorderColor: UIColor = #colorLiteral(red: 0.4, green: 0.8, blue: 1, alpha: 1) {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+
+    private var path = UIBezierPath() {
+        didSet {
+            path.lineJoinStyle = .bevel
+            path.lineWidth = 3
+            setNeedsDisplay()
+        }
+    }
+
+    public func didRecognizeMetadataObject(_ objects: [AVMetadataObject]) {
+        path = objects.reduce(UIBezierPath()) {
+            if let rect = previewLayer
+                .transformedMetadataObject(for: $1)?.bounds {
+                $0.append(UIBezierPath(rect: rect))
+            }
+            return $0
+        }
+    }
+
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        barcodeBorderColor.setStroke()
+        path.stroke()
+    }
+}
