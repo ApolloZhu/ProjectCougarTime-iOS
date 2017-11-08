@@ -57,6 +57,8 @@
 		52FD953F1FB248E900ACF280 /* NSLocalizedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLocalizedString+Extensions.swift"; sourceTree = "<group>"; };
 		52FD95411FB2652900ACF280 /* TeacherLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherLoginViewController.swift; sourceTree = "<group>"; };
 		52FD95431FB272D800ACF280 /* BiometricAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthentication.swift; sourceTree = "<group>"; };
+		52FD95451FB29B0D00ACF280 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		52FD95461FB29B7A00ACF280 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,8 @@
 		52590BFC1FB22E5C0053881C = {
 			isa = PBXGroup;
 			children = (
+				52FD95451FB29B0D00ACF280 /* README.md */,
+				52FD95461FB29B7A00ACF280 /* LICENSE */,
 				52590C3B1FB22F4F0053881C /* ProjectCougarTime-iOS-Teacher */,
 				52590C501FB22F680053881C /* ProjectCougarTime-iOS-TeacherTests */,
 				52590C5B1FB22F750053881C /* ProjectCougarTime-iOS-TeacherUITests */,
