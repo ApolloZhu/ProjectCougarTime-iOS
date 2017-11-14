@@ -31,7 +31,7 @@ class StudentIDScannerView: UIView {
 
     // MARK: Barcode Stroking
 
-    public var barcodeBorderColor: UIColor = #colorLiteral(red: 0.4, green: 0.8, blue: 1, alpha: 1) {
+    public var barcodeBorderColor: UIColor = .tianYi {
         didSet {
             setNeedsDisplay()
         }

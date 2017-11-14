@@ -18,7 +18,7 @@ struct BiometricAuthentication {
     }
     static var isFaceID: Bool {
         if #available(iOS 11.0, *) {
-            return .typeFaceID == LAContext().biometryType
+            return .faceID == LAContext().biometryType
         }
         return false
     }

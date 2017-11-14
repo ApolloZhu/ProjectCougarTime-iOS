@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524C3CE91FB3E45500BF2187 /* StudentIDInputContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524C3CE81FB3E45500BF2187 /* StudentIDInputContainerViewController.swift */; };
+		524C3CEB1FB3E5BE00BF2187 /* StudentIDInputMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524C3CEA1FB3E5BE00BF2187 /* StudentIDInputMethod.swift */; };
 		52590C3D1FB22F500053881C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52590C3C1FB22F4F0053881C /* AppDelegate.swift */; };
 		52590C421FB22F500053881C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52590C401FB22F500053881C /* Main.storyboard */; };
 		52590C441FB22F510053881C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52590C431FB22F510053881C /* Assets.xcassets */; };
 		52590C471FB22F510053881C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52590C451FB22F510053881C /* LaunchScreen.storyboard */; };
 		52590C521FB22F6C0053881C /* ProjectCougarTime_iOS_TeacherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52590C511FB22F6C0053881C /* ProjectCougarTime_iOS_TeacherTests.swift */; };
 		52590C5D1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52590C5C1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift */; };
+		52C7613D1FBA115100D266D0 /* StudentIDManualInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7613C1FBA115100D266D0 /* StudentIDManualInputViewController.swift */; };
+		52C761441FBA33FF00D266D0 /* StudentIDManualInputView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C761431FBA33FE00D266D0 /* StudentIDManualInputView.storyboard */; };
+		52C761461FBA5AB600D266D0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C761451FBA5AB600D266D0 /* UIColor+Extensions.swift */; };
 		52FD95391FB237B700ACF280 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD95381FB237B700ACF280 /* Student.swift */; };
 		52FD953B1FB23A9D00ACF280 /* StudentIDScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD953A1FB23A9D00ACF280 /* StudentIDScannerViewController.swift */; };
 		52FD953D1FB23C3500ACF280 /* StudentIDScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD953C1FB23C3500ACF280 /* StudentIDScannerView.swift */; };
@@ -39,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		524C3CE51FB3BB5800BF2187 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		524C3CE81FB3E45500BF2187 /* StudentIDInputContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentIDInputContainerViewController.swift; sourceTree = "<group>"; };
+		524C3CEA1FB3E5BE00BF2187 /* StudentIDInputMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentIDInputMethod.swift; sourceTree = "<group>"; };
 		52590C3A1FB22F4F0053881C /* Cougar Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cougar Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52590C3C1FB22F4F0053881C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52590C411FB22F500053881C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +59,9 @@
 		52590C581FB22F740053881C /* ProjectCougarTime-iOS-TeacherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ProjectCougarTime-iOS-TeacherUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52590C5C1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCougarTime_iOS_TeacherUITests.swift; sourceTree = "<group>"; };
 		52590C5E1FB22F780053881C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52C7613C1FBA115100D266D0 /* StudentIDManualInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentIDManualInputViewController.swift; sourceTree = "<group>"; };
+		52C761431FBA33FE00D266D0 /* StudentIDManualInputView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StudentIDManualInputView.storyboard; sourceTree = "<group>"; };
+		52C761451FBA5AB600D266D0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		52FD95381FB237B700ACF280 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		52FD953A1FB23A9D00ACF280 /* StudentIDScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentIDScannerViewController.swift; sourceTree = "<group>"; };
 		52FD953C1FB23C3500ACF280 /* StudentIDScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentIDScannerView.swift; sourceTree = "<group>"; };
@@ -89,6 +100,7 @@
 		52590BFC1FB22E5C0053881C = {
 			isa = PBXGroup;
 			children = (
+				524C3CE51FB3BB5800BF2187 /* CHANGELOG.md */,
 				52FD95451FB29B0D00ACF280 /* README.md */,
 				52FD95461FB29B7A00ACF280 /* LICENSE */,
 				52590C3B1FB22F4F0053881C /* ProjectCougarTime-iOS-Teacher */,
@@ -152,6 +164,7 @@
 			children = (
 				52590C401FB22F500053881C /* Main.storyboard */,
 				52FD953C1FB23C3500ACF280 /* StudentIDScannerView.swift */,
+				52C761431FBA33FE00D266D0 /* StudentIDManualInputView.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,7 +173,10 @@
 			isa = PBXGroup;
 			children = (
 				52FD95411FB2652900ACF280 /* TeacherLoginViewController.swift */,
+				524C3CEA1FB3E5BE00BF2187 /* StudentIDInputMethod.swift */,
+				524C3CE81FB3E45500BF2187 /* StudentIDInputContainerViewController.swift */,
 				52FD953A1FB23A9D00ACF280 /* StudentIDScannerViewController.swift */,
+				52C7613C1FBA115100D266D0 /* StudentIDManualInputViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				52FD953F1FB248E900ACF280 /* NSLocalizedString+Extensions.swift */,
+				52C761451FBA5AB600D266D0 /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -295,6 +312,7 @@
 				52590C471FB22F510053881C /* LaunchScreen.storyboard in Resources */,
 				52590C441FB22F510053881C /* Assets.xcassets in Resources */,
 				52590C421FB22F500053881C /* Main.storyboard in Resources */,
+				52C761441FBA33FF00D266D0 /* StudentIDManualInputView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,10 +355,14 @@
 			files = (
 				52FD953B1FB23A9D00ACF280 /* StudentIDScannerViewController.swift in Sources */,
 				52FD95391FB237B700ACF280 /* Student.swift in Sources */,
+				524C3CEB1FB3E5BE00BF2187 /* StudentIDInputMethod.swift in Sources */,
 				52590C3D1FB22F500053881C /* AppDelegate.swift in Sources */,
 				52FD95441FB272D800ACF280 /* BiometricAuthentication.swift in Sources */,
+				524C3CE91FB3E45500BF2187 /* StudentIDInputContainerViewController.swift in Sources */,
 				52FD953D1FB23C3500ACF280 /* StudentIDScannerView.swift in Sources */,
 				52FD95421FB2652900ACF280 /* TeacherLoginViewController.swift in Sources */,
+				52C761461FBA5AB600D266D0 /* UIColor+Extensions.swift in Sources */,
+				52C7613D1FBA115100D266D0 /* StudentIDManualInputViewController.swift in Sources */,
 				52FD95401FB248E900ACF280 /* NSLocalizedString+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

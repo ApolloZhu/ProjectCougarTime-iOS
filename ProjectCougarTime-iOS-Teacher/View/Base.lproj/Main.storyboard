@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lkv-Ly-GJG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lkv-Ly-GJG">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cougar Time Check In System-->
+        <!--Cougar Time-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TeacherLoginViewController" customModule="Cougar_Time" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Cougar Time" id="BYZ-38-t0r" customClass="TeacherLoginViewController" customModule="Cougar_Time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,13 +32,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartQuotesType="no" textContentType="username"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2MZ-J6-V4R">
                                         <rect key="frame" x="0.0" y="50" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8K8-4d-o4m">
                                         <rect key="frame" x="0.0" y="100" width="335" height="30"/>
@@ -91,34 +91,85 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Cougar Time Check In System" largeTitleDisplayMode="always" id="t12-PD-uGL"/>
+                    <navigationItem key="navigationItem" title="Cougar Time" largeTitleDisplayMode="always" id="t12-PD-uGL">
+                        <barButtonItem key="backBarButtonItem" title="Login" id="rGJ-NT-jAY"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="loginButton" destination="8K8-4d-o4m" id="xXU-4M-p3N"/>
                         <outlet property="passwordTextField" destination="2MZ-J6-V4R" id="6E1-ZF-J6v"/>
                         <outlet property="useBiometricAuthenticationStackView" destination="IgV-SC-ifJ" id="OEE-0b-ZZR"/>
                         <outlet property="useBiometricAuthenticationSwitch" destination="thY-N5-Iay" id="5mI-Hb-8Uy"/>
                         <outlet property="usernameTextField" destination="aN3-V3-DYT" id="WWt-2r-eRc"/>
+                        <segue destination="MCM-8H-BdP" kind="show" identifier="ShowCheckInVCSegue" id="vTJ-C3-hAq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="404" y="32.833583208395808"/>
         </scene>
+        <!--Student Check In-->
+        <scene sceneID="eti-lb-Xm3">
+            <objects>
+                <viewController title="Student Check In" id="MCM-8H-BdP" customClass="StudentIDInputContainerViewController" customModule="Cougar_Time" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="StC-Vh-iKv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUp-VC-wqQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AAL-jX-aPs" firstAttribute="top" secondItem="EUp-VC-wqQ" secondAttribute="top" id="3LI-h8-uxm"/>
+                            <constraint firstItem="AAL-jX-aPs" firstAttribute="trailing" secondItem="EUp-VC-wqQ" secondAttribute="trailing" id="PER-J1-7JB"/>
+                            <constraint firstItem="AAL-jX-aPs" firstAttribute="bottom" secondItem="EUp-VC-wqQ" secondAttribute="bottom" id="jZ8-9d-6IY"/>
+                            <constraint firstItem="EUp-VC-wqQ" firstAttribute="leading" secondItem="AAL-jX-aPs" secondAttribute="leading" id="yCk-zD-9hY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AAL-jX-aPs"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <toolbarItems>
+                        <barButtonItem title="Switch Input Method" id="M1I-YC-tPl">
+                            <connections>
+                                <action selector="switchInputMethod" destination="MCM-8H-BdP" id="Sbd-EZ-Q8K"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ZsF-eG-OFm"/>
+                        <barButtonItem systemItem="done" id="Po3-Yy-igl">
+                            <connections>
+                                <action selector="done" destination="MCM-8H-BdP" id="Vpc-e7-9tD"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <connections>
+                        <outlet property="containerView" destination="EUp-VC-wqQ" id="lKw-S1-v8E"/>
+                        <outlet property="switchInputMethodButton" destination="M1I-YC-tPl" id="ibW-5O-qfr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2e8-Hu-Gzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1232.8" y="32.512315270935964"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="5xe-vZ-onC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lkv-Ly-GJG" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wrc-tt-DWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="lkv-Ly-GJG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Gh-2f-LKV">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YcT-Tv-C3Q">
+                        <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vDe-6d-gzR"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wrc-tt-DWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-308" y="33"/>
         </scene>

@@ -9,16 +9,13 @@
 import UIKit
 import AVKit
 
-class StudentIDScannerViewController: UIViewController {
-
+final class StudentIDScannerViewController: UIViewController {
     // MARK: Camera Setup
-
     private static var camera = AVCaptureDevice.default(for: .video)
     private static var input: AVCaptureDeviceInput? = {
         guard let camera = camera else { return nil }
         return try? AVCaptureDeviceInput(device: camera)
     }()
-    public class var isSupported: Bool { return nil != input }
 
     lazy var session: AVCaptureSession? = {
         let session = AVCaptureSession()
@@ -105,5 +102,23 @@ extension StudentIDScannerViewController: AVCaptureMetadataOutputObjectsDelegate
                 recognizedStudents.insert(student)
             }
         }
+    }
+}
+
+extension StudentIDScannerViewController: StudentIDInputMethod {
+    static var identifier: String { return "Scan" }
+
+    static var localizedName: String {
+        let prefix = NSLocalizedStringPrefix()
+        return NSLocalizedString(
+            "\(prefix)",
+            value: "Scan",
+            comment: "Input method is scan (barcode)")
+    }
+
+    static var isSupported: Bool { return nil != input }
+
+    static func instantiate() -> StudentIDInputViewController {
+        return StudentIDScannerViewController()
     }
 }
