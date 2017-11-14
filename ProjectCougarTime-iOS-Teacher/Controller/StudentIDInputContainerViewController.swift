@@ -10,16 +10,9 @@ import UIKit
 import Foundation
 
 class StudentIDInputContainerViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        guard let navBar = navigationController?.navigationBar else { return }
-        let bgColor: UIColor = arc4random_uniform(2) < 1 ? .burgundy : .gold
-        let fgColor: UIColor = bgColor.isDark ? .white: .black
-        navBar.barTintColor = bgColor
-        navBar.tintColor = fgColor
-        if #available(iOS 11.0, *) {
-            navBar.largeTitleTextAttributes = [.foregroundColor: fgColor]
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationBarColor = arc4random_uniform(2) < 1 ? .burgundy : .gold
     }
 
     private var currentInputMethodIndex = 0 {

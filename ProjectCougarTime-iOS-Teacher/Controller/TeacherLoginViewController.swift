@@ -26,26 +26,68 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet private weak var loginButton: UIButton!
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    private func tryEnableLoginButton() {
         loginButton.isEnabled = !(true == usernameTextField.text?.isEmpty
             || true == passwordTextField.text?.isEmpty)
-        return true
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard textField.isFirstResponder else { return }
-        textField.resignFirstResponder()
-        loginButton.isEnabled = !(true == usernameTextField.text?.isEmpty
-            || true == passwordTextField.text?.isEmpty)
-        if (textField == usernameTextField) {
-            passwordTextField.becomeFirstResponder()
-        } else if loginButton.isEnabled {
-            login()
-        }
     }
 
     @IBAction private func login() {
         performSegue(withIdentifier: "ShowCheckInVCSegue", sender: loginButton)
+    }
+
+    // MARK: Text Field
+    private var firstResponder: UITextField?
+
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        firstResponder = textField
+        return true
+    }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        tryEnableLoginButton()
+    }
+
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        tryEnableLoginButton()
+        return true
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        tryEnableLoginButton()
+        textField.resignFirstResponder()
+        if loginButton.isEnabled {
+            login()
+        } else if textField == usernameTextField {
+            passwordTextField.becomeFirstResponder()
+        }
+        return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        tryEnableLoginButton()
+    }
+
+    @objc func keyBoardWillChangeFrame(_ notification: Notification) {
+        guard let info = notification.userInfo,
+            let animationDuration: TimeInterval = (info[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue,
+            let animationCurveRawValue = (info[UIKeyboardAnimationCurveUserInfoKey] as AnyObject).uintValue,
+            // let frameBegin = (info[UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue,
+            let frameEnd = (info[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
+            else { return }
+        guard false != (info[UIKeyboardIsLocalUserInfoKey] as AnyObject).boolValue else { return }
+        let firstResponderMaxY = firstResponder?.frame.maxY ?? 0
+        UIView.animate(
+            withDuration: animationDuration, delay: 0,
+            options: UIViewAnimationOptions(rawValue: animationCurveRawValue << 16),
+            animations: { [weak self] in
+                if frameEnd.minY < firstResponderMaxY {
+                    self?.view.frame.origin.y = frameEnd.minY - firstResponderMaxY - 8
+                } else {
+                    self?.view.frame.origin.y = 0
+                }
+            }, completion: nil)
     }
 
     // Mark: Biometric Authentication
@@ -54,13 +96,18 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         useBiometricAuthenticationStackView.isHidden = !BiometricAuthentication.isAvailable
-        guard let navBar = navigationController?.navigationBar else { return }
-        navBar.barTintColor = .white
-        navBar.tintColor = .black
+        navigationBarColor = .white
         if #available(iOS 11.0, *) {
-            navBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
             navigationItem.largeTitleDisplayMode = .always
         }
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyBoardWillChangeFrame(_:)),
+                                               name: .UIKeyboardWillChangeFrame, object: nil)
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
 
     @IBAction private func showInfoAboutBiometricAuthentication() {
