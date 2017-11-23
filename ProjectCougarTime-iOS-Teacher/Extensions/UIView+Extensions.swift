@@ -10,10 +10,13 @@ import UIKit
 
 extension UIView {
     func constraintToSuperview() {
-        guard let superview = superview else { return }
-        centerXAnchor.constraint(equalTo: superview.centerXAnchor)
-        centerYAnchor.constraint(equalTo: superview.centerYAnchor)
-        widthAnchor.constraint(equalTo: superview.widthAnchor)
-        heightAnchor.constraint(equalTo: superview.heightAnchor)
+        autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        /*
+         guard let superview = superview else { return }
+         centerXAnchor.constraint(equalTo: superview.centerXAnchor)
+         centerYAnchor.constraint(equalTo: superview.centerYAnchor)
+         widthAnchor.constraint(equalTo: superview.widthAnchor)
+         heightAnchor.constraint(equalTo: superview.heightAnchor)
+         */
     }
 }

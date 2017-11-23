@@ -39,7 +39,6 @@ class StudentIDScannerView: UIView {
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        constraintToSuperview()
         NotificationCenter.default.addObserver(self, selector: #selector(updateOrientation),
                                                name: .UIApplicationDidChangeStatusBarOrientation, object: nil)
     }

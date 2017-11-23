@@ -120,12 +120,6 @@
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="AAL-jX-aPs" firstAttribute="top" secondItem="EUp-VC-wqQ" secondAttribute="top" id="3LI-h8-uxm"/>
-                            <constraint firstItem="AAL-jX-aPs" firstAttribute="trailing" secondItem="EUp-VC-wqQ" secondAttribute="trailing" id="PER-J1-7JB"/>
-                            <constraint firstItem="AAL-jX-aPs" firstAttribute="bottom" secondItem="EUp-VC-wqQ" secondAttribute="bottom" id="jZ8-9d-6IY"/>
-                            <constraint firstItem="EUp-VC-wqQ" firstAttribute="leading" secondItem="AAL-jX-aPs" secondAttribute="leading" id="yCk-zD-9hY"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AAL-jX-aPs"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>

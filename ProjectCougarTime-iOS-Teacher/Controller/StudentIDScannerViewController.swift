@@ -30,7 +30,10 @@ final class StudentIDScannerViewController: UIViewController {
     }()
     
     // MARK: Custom View Class
-    override func loadView() { view = StudentIDScannerView(frame: UIScreen.main.bounds) }
+    override func loadView() {
+        view = StudentIDScannerView(frame: UIScreen.main.bounds)
+        view.constraintToSuperview()
+    }
     private var previewView: StudentIDScannerView { return view as! StudentIDScannerView }
     
     // MARK: View Setup

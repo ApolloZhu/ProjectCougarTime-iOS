@@ -55,6 +55,7 @@ class StudentIDInputContainerViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView! {
         didSet {
+            containerView.constraintToSuperview()
             let firstVC = inputViewControllers[0]
             addChildViewController(firstVC)
             embedView(firstVC.view)
