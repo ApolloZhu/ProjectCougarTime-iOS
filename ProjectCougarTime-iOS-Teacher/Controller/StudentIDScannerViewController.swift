@@ -16,26 +16,25 @@ final class StudentIDScannerViewController: UIViewController {
         guard let camera = camera else { return nil }
         return try? AVCaptureDeviceInput(device: camera)
     }()
-
-    lazy var session: AVCaptureSession? = {
+    
+    private lazy var session: AVCaptureSession? = {
         let session = AVCaptureSession()
         guard let input = StudentIDScannerViewController.input else { return nil }
         session.addInput(input)
         let output = AVCaptureMetadataOutput()
-        // FIXME: Correct Type
-        output.metadataObjectTypes = []
-        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         session.addOutput(output)
+        output.metadataObjectTypes = [.face, .code39]
+        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         session.startRunning()
         return session
     }()
-
+    
     // MARK: Custom View Class
-    override func loadView() { view = StudentIDScannerView() }
+    override func loadView() { view = StudentIDScannerView(frame: UIScreen.main.bounds) }
     private var previewView: StudentIDScannerView { return view as! StudentIDScannerView }
-
+    
     // MARK: View Setup
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.isIdleTimerDisabled = true
@@ -44,11 +43,11 @@ final class StudentIDScannerViewController: UIViewController {
         }
         previewView.session = session
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.isIdleTimerDisabled = false
     }
-
+    
     private func displayDialogForUnsupportedDevice() {
         let prefix = NSLocalizedStringPrefix()
         let alert = UIAlertController(
@@ -72,13 +71,13 @@ final class StudentIDScannerViewController: UIViewController {
             self?.dismiss(animated: true, completion: nil)
         }
     }
-
+    
     private var recognizedStudents: Set<Student> = [] {
         didSet {
             askCheckInStudent()
         }
     }
-
+    
     private func askCheckInStudent() {
         for student in recognizedStudents {
             // FIXME: Actual Classroom
@@ -107,7 +106,7 @@ extension StudentIDScannerViewController: AVCaptureMetadataOutputObjectsDelegate
 
 extension StudentIDScannerViewController: StudentIDInputMethod {
     static var identifier: String { return "Scan" }
-
+    
     static var localizedName: String {
         let prefix = NSLocalizedStringPrefix()
         return NSLocalizedString(
@@ -115,9 +114,9 @@ extension StudentIDScannerViewController: StudentIDInputMethod {
             value: "Scan",
             comment: "Input method is scan (barcode)")
     }
-
+    
     static var isSupported: Bool { return nil != input }
-
+    
     static func instantiate() -> StudentIDInputViewController {
         return StudentIDScannerViewController()
     }

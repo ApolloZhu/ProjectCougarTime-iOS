@@ -46,10 +46,7 @@ class StudentIDInputContainerViewController: UIViewController {
 
     private func embedView(_ childView: UIView) {
         containerView.addSubview(childView)
-        childView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
-        childView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
-        childView.widthAnchor.constraint(equalTo: containerView.widthAnchor)
-        childView.heightAnchor.constraint(equalTo: containerView.heightAnchor)
+        childView.constraintToSuperview()
     }
 
     private lazy var inputViewControllers =

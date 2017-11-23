@@ -15,6 +15,7 @@
 		52590C471FB22F510053881C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52590C451FB22F510053881C /* LaunchScreen.storyboard */; };
 		52590C521FB22F6C0053881C /* ProjectCougarTime_iOS_TeacherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52590C511FB22F6C0053881C /* ProjectCougarTime_iOS_TeacherTests.swift */; };
 		52590C5D1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52590C5C1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift */; };
+		527F24C51FC68CF900C7D95E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F24C41FC68CF900C7D95E /* UIView+Extensions.swift */; };
 		52C7613D1FBA115100D266D0 /* StudentIDManualInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7613C1FBA115100D266D0 /* StudentIDManualInputViewController.swift */; };
 		52C761441FBA33FF00D266D0 /* StudentIDManualInputView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C761431FBA33FE00D266D0 /* StudentIDManualInputView.storyboard */; };
 		52C761461FBA5AB600D266D0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C761451FBA5AB600D266D0 /* UIColor+Extensions.swift */; };
@@ -60,6 +61,7 @@
 		52590C581FB22F740053881C /* ProjectCougarTime-iOS-TeacherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ProjectCougarTime-iOS-TeacherUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52590C5C1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCougarTime_iOS_TeacherUITests.swift; sourceTree = "<group>"; };
 		52590C5E1FB22F780053881C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		527F24C41FC68CF900C7D95E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../../../../../../apollonian/Documents/Git-Repo/ProjectCougarTime-iOS/ProjectCougarTime-iOS-Teacher/Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
 		52C7613C1FBA115100D266D0 /* StudentIDManualInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentIDManualInputViewController.swift; sourceTree = "<group>"; };
 		52C761431FBA33FE00D266D0 /* StudentIDManualInputView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StudentIDManualInputView.storyboard; sourceTree = "<group>"; };
 		52C761451FBA5AB600D266D0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				52FD953F1FB248E900ACF280 /* NSLocalizedString+Extensions.swift */,
 				52C761451FBA5AB600D266D0 /* UIColor+Extensions.swift */,
 				52C761471FBA759E00D266D0 /* UIViewController+Extensions.swift */,
+				527F24C41FC68CF900C7D95E /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				524C3CEB1FB3E5BE00BF2187 /* StudentIDInputMethod.swift in Sources */,
 				52590C3D1FB22F500053881C /* AppDelegate.swift in Sources */,
 				52C761481FBA759E00D266D0 /* UIViewController+Extensions.swift in Sources */,
+				527F24C51FC68CF900C7D95E /* UIView+Extensions.swift in Sources */,
 				52FD95441FB272D800ACF280 /* BiometricAuthentication.swift in Sources */,
 				524C3CE91FB3E45500BF2187 /* StudentIDInputContainerViewController.swift in Sources */,
 				52FD953D1FB23C3500ACF280 /* StudentIDScannerView.swift in Sources */,

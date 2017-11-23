@@ -32,6 +32,8 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction private func login() {
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
         performSegue(withIdentifier: "ShowCheckInVCSegue", sender: loginButton)
     }
 

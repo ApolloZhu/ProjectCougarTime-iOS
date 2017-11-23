@@ -31,7 +31,7 @@ extension Student: Equatable, Hashable {
 
 extension Student {
     func checkIn(at location: String) {
-        fatalError("Unimplemented")
+        print("#\(id) is at \(location)")
     }
 }
 

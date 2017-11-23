@@ -60,4 +60,10 @@ class StudentIDScannerView: UIView {
         barcodeBorderColor.setStroke()
         path.stroke()
     }
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        guard let superview = superview else { return }
+        constraintToSuperview()
+    }
 }
