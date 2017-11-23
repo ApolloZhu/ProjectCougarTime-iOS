@@ -7,37 +7,22 @@
 //
 
 import UIKit
+import Google
 import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
-    
-    
-    
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GIDSignIn.sharedInstance().delegate = self
+        var error: NSError? = nil
+        GGLContext.sharedInstance().configureWithError(&error)
         if #available(iOS 11.0, *) {
             UINavigationBar.appearance().prefersLargeTitles = true
         }
         return true
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if (error == nil) {
-            // Perform any operations on signed in user here.
-            let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken // Safe to send to the server
-            let fullName = user.profile.name
-            let givenName = user.profile.givenName
-            let familyName = user.profile.familyName
-            let email = user.profile.email
-            // ...
-        } else {
-            print("\(error.localizedDescription)")
-        }
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
