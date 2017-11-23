@@ -12,10 +12,10 @@ import AVKit
 final class StudentIDScannerViewController: UIViewController {
     // MARK: Camera Setup
     private static var camera = AVCaptureDevice.default(for: .video)
-    private static var input: AVCaptureDeviceInput? = {
+    private static var input: AVCaptureDeviceInput? {
         guard let camera = camera else { return nil }
         return try? AVCaptureDeviceInput(device: camera)
-    }()
+    }
     
     private lazy var session: AVCaptureSession? = {
         let session = AVCaptureSession()
