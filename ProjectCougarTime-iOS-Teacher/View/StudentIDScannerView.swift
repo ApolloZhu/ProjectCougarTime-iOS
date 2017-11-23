@@ -20,6 +20,11 @@ class StudentIDScannerView: UIView {
     private var previewLayer: AVCaptureVideoPreviewLayer {
         return layer as! AVCaptureVideoPreviewLayer
     }
+    private lazy var shapeLayer: CAShapeLayer = {
+        let layer = CAShapeLayer()
+        self.previewLayer.addSublayer(layer)
+        return layer
+    }()
     
     var session: AVCaptureSession? {
         get { return previewLayer.session }
@@ -51,7 +56,7 @@ class StudentIDScannerView: UIView {
     
     public var barcodeBorderColor: UIColor = .tianYi {
         didSet {
-            setNeedsDisplay()
+            shapeLayer.strokeColor = barcodeBorderColor.cgColor
         }
     }
     
@@ -59,7 +64,6 @@ class StudentIDScannerView: UIView {
         didSet {
             path.lineJoinStyle = .bevel
             path.lineWidth = 3
-            setNeedsDisplay()
         }
     }
     
@@ -71,11 +75,6 @@ class StudentIDScannerView: UIView {
             }
             return $0
         }
-    }
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        barcodeBorderColor.setStroke()
-        path.stroke()
+        shapeLayer.path = path.cgPath
     }
 }

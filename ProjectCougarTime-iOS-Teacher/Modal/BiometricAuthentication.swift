@@ -36,7 +36,8 @@ struct BiometricAuthentication {
         case failure(error: Error?)
     }
     public typealias AuthenticationCompletionHandler = (_ state: State) -> Void
-    static func authenticate(policy: LAPolicy = policy, reason: String? = nil,
+    private static var contextRef: LAContext!
+    public static func authenticate(policy: LAPolicy = policy, reason: String? = nil,
                              completionHandler: @escaping AuthenticationCompletionHandler) {
         let prefix = NSLocalizedStringPrefix()
         var realReason: String
@@ -58,8 +59,9 @@ struct BiometricAuthentication {
                 value: "Use the password of your device to login.",
                 comment: "Password default login prompt")
         }
-        LAContext().evaluatePolicy(policy, localizedReason: realReason) { succeeded, error in
-            guard succeeded && error != nil else {
+        contextRef = LAContext()
+        contextRef.evaluatePolicy(policy, localizedReason: realReason) { succeeded, error in
+            guard succeeded && error == nil else {
                 return completionHandler(.failure(error: error))
             }
             completionHandler(.success)

@@ -105,6 +105,16 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyBoardWillChangeFrame(_:)),
                                                name: .UIKeyboardWillChangeFrame, object: nil)
+        BiometricAuthentication.authenticate { state in
+            switch state {
+            case .success:
+                DispatchQueue.main.async { [weak self] in
+                    self?.login()
+                }
+            case .failure(error: let error):
+                print(error?.localizedDescription ?? "Unkown ")
+            }
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
