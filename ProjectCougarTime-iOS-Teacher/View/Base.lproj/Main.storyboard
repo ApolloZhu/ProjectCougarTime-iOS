@@ -40,13 +40,22 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8K8-4d-o4m">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kq7-UA-u00">
                                         <rect key="frame" x="0.0" y="100" width="335" height="30"/>
-                                        <state key="normal" title="Login"/>
-                                        <connections>
-                                            <action selector="login" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZgO-jK-DSQ"/>
-                                        </connections>
-                                    </button>
+                                        <subviews>
+                                            <button customClass="GIDSignInButton" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqT-5k-2Wn">
+                                                <rect key="frame" x="0.0" y="0.0" width="163.66666666666666" height="30"/>
+                                                <state key="normal" title=""/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8K8-4d-o4m">
+                                                <rect key="frame" x="171.66666666666663" y="0.0" width="163.33333333333337" height="30"/>
+                                                <state key="normal" title="Login"/>
+                                                <connections>
+                                                    <action selector="login" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZgO-jK-DSQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IgV-SC-ifJ">
                                         <rect key="frame" x="0.0" y="150" width="335" height="31"/>
                                         <subviews>
@@ -115,8 +124,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUp-VC-wqQ">
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EUp-VC-wqQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -148,7 +158,6 @@
         <!--Navigation Controller-->
         <scene sceneID="5xe-vZ-onC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wrc-tt-DWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="lkv-Ly-GJG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Gh-2f-LKV">
@@ -164,6 +173,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vDe-6d-gzR"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wrc-tt-DWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-308" y="33"/>
         </scene>

@@ -6,7 +6,7 @@ target 'ProjectCougarTime-iOS-Teacher' do
   use_frameworks!
 
   # Pods for ProjectCougarTime-iOS-Teacher
-  pod 'GoogleSignIn'
+  pod 'Google/SignIn'
 
   target 'ProjectCougarTime-iOS-TeacherTests' do
     inherit! :search_paths

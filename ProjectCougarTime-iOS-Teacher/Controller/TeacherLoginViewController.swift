@@ -9,7 +9,7 @@
 import UIKit
 import GoogleSignIn
 
-class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
+class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSignInDelegate, GIDSignInUIDelegate {
     // MARK: Login
     @IBOutlet private weak var usernameTextField: UITextField! {
         didSet {
@@ -24,17 +24,28 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
             passwordTextField.delegate = self
         }
     }
+
+    private var isTextFieldsFilled: Bool {
+        return !(true == usernameTextField.text?.isEmpty
+            || true == passwordTextField.text?.isEmpty)
+    }
     
     @IBOutlet private weak var loginButton: UIButton!
     
     private func tryEnableLoginButton() {
-        loginButton.isEnabled = !(true == usernameTextField.text?.isEmpty
-            || true == passwordTextField.text?.isEmpty)
+        loginButton.isEnabled = BiometricAuthentication.isAvailable
+            || isTextFieldsFilled
     }
     
     @IBAction private func login() {
         usernameTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
+        guard !isTextFieldsFilled else { return loginAfterAuthed() }
+        useBiometricAuthentication()
+    }
+
+    private func loginAfterAuthed() {
+        GIDSignIn.sharedInstance().signOut()
         performSegue(withIdentifier: "ShowCheckInVCSegue", sender: loginButton)
     }
     
@@ -92,14 +103,43 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
                 }
             }, completion: nil)
     }
+
+    // Mark: Google Sign In
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if (error == nil) {
+            // Perform any operations on signed in user here.
+            let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let fullName = user.profile.name
+            let givenName = user.profile.givenName
+            let familyName = user.profile.familyName
+            let email = user.profile.email
+            // ...
+            print(email ?? "No email")
+            loginAfterAuthed()
+        } else {
+            print("\(error.localizedDescription)")
+        }
+    }
     
     // Mark: Biometric Authentication
     @IBOutlet weak var useBiometricAuthenticationStackView: UIStackView!
     @IBOutlet private weak var useBiometricAuthenticationSwitch: UISwitch!
+    private func useBiometricAuthentication() {
+        BiometricAuthentication.authenticate { state in
+            switch state {
+            case .success:
+                DispatchQueue.main.async { [weak self] in
+                    self?.loginAfterAuthed()
+                }
+            case .failure(error: let error):
+                print(error?.localizedDescription ?? "Unkown ")
+            }
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        GIDSignIn.sharedInstance().uiDelegate = self
-        useBiometricAuthenticationStackView.isHidden = !BiometricAuthentication.isAvailable
+        tryEnableLoginButton()
         navigationBarColor = .white
         if #available(iOS 11.0, *) {
             navigationItem.largeTitleDisplayMode = .always
@@ -107,16 +147,16 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyBoardWillChangeFrame(_:)),
                                                name: .UIKeyboardWillChangeFrame, object: nil)
-        BiometricAuthentication.authenticate { state in
-            switch state {
-            case .success:
-                DispatchQueue.main.async { [weak self] in
-                    self?.login()
-                }
-            case .failure(error: let error):
-                print(error?.localizedDescription ?? "Unkown ")
-            }
-        }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        guard GIDSignIn.sharedInstance().currentUser == nil
+            else { return login() }
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        useBiometricAuthenticationStackView.isHidden = !BiometricAuthentication.isAvailable
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {
