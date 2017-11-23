@@ -1,0 +1,6 @@
+framework module Pods_ProjectCougarTime_iOS_TeacherUITests {
+  umbrella header "Pods-ProjectCougarTime-iOS-TeacherUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

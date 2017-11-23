@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeacherLoginViewController: UIViewController, UITextFieldDelegate {
+class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     // MARK: Login
     @IBOutlet private weak var usernameTextField: UITextField! {
         didSet {
@@ -97,6 +97,7 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet private weak var useBiometricAuthenticationSwitch: UISwitch!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        GIDSignIn.sharedInstance().uiDelegate = self
         useBiometricAuthenticationStackView.isHidden = !BiometricAuthentication.isAvailable
         navigationBarColor = .white
         if #available(iOS 11.0, *) {

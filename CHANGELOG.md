@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Teacher Login UI
+- Google Sign In
 - Biometric Authentication
 - Barcode Scan
 - Face Detection
