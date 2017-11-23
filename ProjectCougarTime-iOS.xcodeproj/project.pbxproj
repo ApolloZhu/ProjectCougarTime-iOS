@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E405F9F3D3CF1D6E5EBFE0B /* Pods_ProjectCougarTime_iOS_TeacherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9617E9374DE21CB84284A98F /* Pods_ProjectCougarTime_iOS_TeacherUITests.framework */; };
+		520FC0811FC72F1B003DE141 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 520FC0801FC72F1A003DE141 /* GoogleService-Info.plist */; };
 		524C3CE91FB3E45500BF2187 /* StudentIDInputContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524C3CE81FB3E45500BF2187 /* StudentIDInputContainerViewController.swift */; };
 		524C3CEB1FB3E5BE00BF2187 /* StudentIDInputMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524C3CEA1FB3E5BE00BF2187 /* StudentIDInputMethod.swift */; };
 		52590C3D1FB22F500053881C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52590C3C1FB22F4F0053881C /* AppDelegate.swift */; };
@@ -26,6 +28,8 @@
 		52FD95401FB248E900ACF280 /* NSLocalizedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD953F1FB248E900ACF280 /* NSLocalizedString+Extensions.swift */; };
 		52FD95421FB2652900ACF280 /* TeacherLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD95411FB2652900ACF280 /* TeacherLoginViewController.swift */; };
 		52FD95441FB272D800ACF280 /* BiometricAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD95431FB272D800ACF280 /* BiometricAuthentication.swift */; };
+		EC677ACAFDAF6DDB8B53A7B3 /* Pods_ProjectCougarTime_iOS_Teacher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8161CC6BB8EA6337A6CA65B /* Pods_ProjectCougarTime_iOS_Teacher.framework */; };
+		FFDE5E90FCD4B52C9701A0B3 /* Pods_ProjectCougarTime_iOS_TeacherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92F4F60DB9222FC29DCFCA6 /* Pods_ProjectCougarTime_iOS_TeacherTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		271BFA634C7D5E81BF0E317D /* Pods-ProjectCougarTime-iOS-Teacher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectCougarTime-iOS-Teacher.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectCougarTime-iOS-Teacher/Pods-ProjectCougarTime-iOS-Teacher.release.xcconfig"; sourceTree = "<group>"; };
+		3CA5E7C952EEFA09A4F90B52 /* Pods-ProjectCougarTime-iOS-TeacherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectCougarTime-iOS-TeacherUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectCougarTime-iOS-TeacherUITests/Pods-ProjectCougarTime-iOS-TeacherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		414AC52417A5C379DFF4FFE6 /* Pods-ProjectCougarTime-iOS-Teacher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectCougarTime-iOS-Teacher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectCougarTime-iOS-Teacher/Pods-ProjectCougarTime-iOS-Teacher.debug.xcconfig"; sourceTree = "<group>"; };
+		520FC0801FC72F1A003DE141 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		524C3CE51FB3BB5800BF2187 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		524C3CE81FB3E45500BF2187 /* StudentIDInputContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentIDInputContainerViewController.swift; sourceTree = "<group>"; };
 		524C3CEA1FB3E5BE00BF2187 /* StudentIDInputMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentIDInputMethod.swift; sourceTree = "<group>"; };
@@ -74,6 +82,12 @@
 		52FD95431FB272D800ACF280 /* BiometricAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthentication.swift; sourceTree = "<group>"; };
 		52FD95451FB29B0D00ACF280 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		52FD95461FB29B7A00ACF280 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		92B1A29C310A05C1E1B3F949 /* Pods-ProjectCougarTime-iOS-TeacherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectCougarTime-iOS-TeacherUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectCougarTime-iOS-TeacherUITests/Pods-ProjectCougarTime-iOS-TeacherUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9617E9374DE21CB84284A98F /* Pods_ProjectCougarTime_iOS_TeacherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectCougarTime_iOS_TeacherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4002F0405B67D1C76B4DB20 /* Pods-ProjectCougarTime-iOS-TeacherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectCougarTime-iOS-TeacherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectCougarTime-iOS-TeacherTests/Pods-ProjectCougarTime-iOS-TeacherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C92F4F60DB9222FC29DCFCA6 /* Pods_ProjectCougarTime_iOS_TeacherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectCougarTime_iOS_TeacherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8161CC6BB8EA6337A6CA65B /* Pods_ProjectCougarTime_iOS_Teacher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectCougarTime_iOS_Teacher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED85FF00CC5EF318EC1EE89 /* Pods-ProjectCougarTime-iOS-TeacherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectCougarTime-iOS-TeacherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectCougarTime-iOS-TeacherTests/Pods-ProjectCougarTime-iOS-TeacherTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC677ACAFDAF6DDB8B53A7B3 /* Pods_ProjectCougarTime_iOS_Teacher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDE5E90FCD4B52C9701A0B3 /* Pods_ProjectCougarTime_iOS_TeacherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E405F9F3D3CF1D6E5EBFE0B /* Pods_ProjectCougarTime_iOS_TeacherUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +128,8 @@
 				52590C501FB22F680053881C /* ProjectCougarTime-iOS-TeacherTests */,
 				52590C5B1FB22F750053881C /* ProjectCougarTime-iOS-TeacherUITests */,
 				52590C061FB22E5E0053881C /* Products */,
+				8AC1F0339D19B2D51367482D /* Pods */,
+				6E52F9D31785169ADCFA6D81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +151,7 @@
 				52590C6D1FB230960053881C /* Controller */,
 				52FD953E1FB23C6500ACF280 /* Extensions */,
 				52FD95361FB232A900ACF280 /* Supporting Files */,
+				520FC0801FC72F1A003DE141 /* GoogleService-Info.plist */,
 			);
 			path = "ProjectCougarTime-iOS-Teacher";
 			sourceTree = "<group>";
@@ -207,6 +227,29 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		6E52F9D31785169ADCFA6D81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8161CC6BB8EA6337A6CA65B /* Pods_ProjectCougarTime_iOS_Teacher.framework */,
+				C92F4F60DB9222FC29DCFCA6 /* Pods_ProjectCougarTime_iOS_TeacherTests.framework */,
+				9617E9374DE21CB84284A98F /* Pods_ProjectCougarTime_iOS_TeacherUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8AC1F0339D19B2D51367482D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				414AC52417A5C379DFF4FFE6 /* Pods-ProjectCougarTime-iOS-Teacher.debug.xcconfig */,
+				271BFA634C7D5E81BF0E317D /* Pods-ProjectCougarTime-iOS-Teacher.release.xcconfig */,
+				B4002F0405B67D1C76B4DB20 /* Pods-ProjectCougarTime-iOS-TeacherTests.debug.xcconfig */,
+				FED85FF00CC5EF318EC1EE89 /* Pods-ProjectCougarTime-iOS-TeacherTests.release.xcconfig */,
+				3CA5E7C952EEFA09A4F90B52 /* Pods-ProjectCougarTime-iOS-TeacherUITests.debug.xcconfig */,
+				92B1A29C310A05C1E1B3F949 /* Pods-ProjectCougarTime-iOS-TeacherUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,10 +257,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52590C5F1FB22F780053881C /* Build configuration list for PBXNativeTarget "ProjectCougarTime-iOS-Teacher" */;
 			buildPhases = (
+				D6C7B9B16205D7AF34BB1198 /* [CP] Check Pods Manifest.lock */,
 				52590C361FB22F4F0053881C /* Sources */,
 				52590C371FB22F4F0053881C /* Frameworks */,
 				52590C381FB22F4F0053881C /* Resources */,
 				52FD95371FB2332200ACF280 /* ShellScript */,
+				57871501DF2DC05F73B96880 /* [CP] Embed Pods Frameworks */,
+				5B9B660169486B7326590992 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,9 +278,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52590C621FB22F780053881C /* Build configuration list for PBXNativeTarget "ProjectCougarTime-iOS-TeacherTests" */;
 			buildPhases = (
+				3CD5C6ADDB008A1A5229B6EC /* [CP] Check Pods Manifest.lock */,
 				52590C491FB22F670053881C /* Sources */,
 				52590C4A1FB22F670053881C /* Frameworks */,
 				52590C4B1FB22F670053881C /* Resources */,
+				F304E9EB1DF2E4970D85834B /* [CP] Embed Pods Frameworks */,
+				B8E67EF65378504067F36B92 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,9 +299,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52590C651FB22F780053881C /* Build configuration list for PBXNativeTarget "ProjectCougarTime-iOS-TeacherUITests" */;
 			buildPhases = (
+				F8BFCA6A0BB155785FB10739 /* [CP] Check Pods Manifest.lock */,
 				52590C541FB22F740053881C /* Sources */,
 				52590C551FB22F740053881C /* Frameworks */,
 				52590C561FB22F740053881C /* Resources */,
+				AB6849853BBD4BDCD799688C /* [CP] Embed Pods Frameworks */,
+				A5F0FE4372BFEE4346A20ADB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,6 +369,7 @@
 			files = (
 				52590C471FB22F510053881C /* LaunchScreen.storyboard in Resources */,
 				52590C441FB22F510053881C /* Assets.xcassets in Resources */,
+				520FC0811FC72F1B003DE141 /* GoogleService-Info.plist in Resources */,
 				52590C421FB22F500053881C /* Main.storyboard in Resources */,
 				52C761441FBA33FF00D266D0 /* StudentIDManualInputView.storyboard in Resources */,
 			);
@@ -339,6 +392,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3CD5C6ADDB008A1A5229B6EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProjectCougarTime-iOS-TeacherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		52FD95371FB2332200ACF280 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -351,6 +422,142 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+		57871501DF2DC05F73B96880 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ProjectCougarTime-iOS-Teacher/Pods-ProjectCougarTime-iOS-Teacher-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectCougarTime-iOS-Teacher/Pods-ProjectCougarTime-iOS-Teacher-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B9B660169486B7326590992 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ProjectCougarTime-iOS-Teacher/Pods-ProjectCougarTime-iOS-Teacher-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectCougarTime-iOS-Teacher/Pods-ProjectCougarTime-iOS-Teacher-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5F0FE4372BFEE4346A20ADB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectCougarTime-iOS-TeacherUITests/Pods-ProjectCougarTime-iOS-TeacherUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB6849853BBD4BDCD799688C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectCougarTime-iOS-TeacherUITests/Pods-ProjectCougarTime-iOS-TeacherUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8E67EF65378504067F36B92 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectCougarTime-iOS-TeacherTests/Pods-ProjectCougarTime-iOS-TeacherTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6C7B9B16205D7AF34BB1198 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProjectCougarTime-iOS-Teacher-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F304E9EB1DF2E4970D85834B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectCougarTime-iOS-TeacherTests/Pods-ProjectCougarTime-iOS-TeacherTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8BFCA6A0BB155785FB10739 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProjectCougarTime-iOS-TeacherUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -535,6 +742,7 @@
 		};
 		52590C601FB22F780053881C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 414AC52417A5C379DFF4FFE6 /* Pods-ProjectCougarTime-iOS-Teacher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -549,6 +757,7 @@
 		};
 		52590C611FB22F780053881C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 271BFA634C7D5E81BF0E317D /* Pods-ProjectCougarTime-iOS-Teacher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -563,6 +772,7 @@
 		};
 		52590C631FB22F780053881C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4002F0405B67D1C76B4DB20 /* Pods-ProjectCougarTime-iOS-TeacherTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -580,6 +790,7 @@
 		};
 		52590C641FB22F780053881C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FED85FF00CC5EF318EC1EE89 /* Pods-ProjectCougarTime-iOS-TeacherTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -597,6 +808,7 @@
 		};
 		52590C661FB22F780053881C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CA5E7C952EEFA09A4F90B52 /* Pods-ProjectCougarTime-iOS-TeacherUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -613,6 +825,7 @@
 		};
 		52590C671FB22F780053881C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92B1A29C310A05C1E1B3F949 /* Pods-ProjectCougarTime-iOS-TeacherUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
