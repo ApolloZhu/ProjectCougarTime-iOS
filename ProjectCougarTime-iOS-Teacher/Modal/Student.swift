@@ -23,7 +23,7 @@ extension Student: Equatable, Hashable {
     public var hashValue: Int {
         return id.hashValue
     }
-
+    
     public static func ==(lhs: Student, rhs: Student) -> Bool {
         return lhs.id == rhs.id
     }
@@ -44,7 +44,7 @@ extension Student {
             }
             return nil
         }
-
+        
         init(id: Int,
              name: String? = nil,
              image: UIImage) {

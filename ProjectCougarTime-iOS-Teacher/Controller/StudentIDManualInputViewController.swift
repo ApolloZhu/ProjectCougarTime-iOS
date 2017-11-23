@@ -19,12 +19,12 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
         label.textAlignment = .center
         return label
     }()
-
+    
     @IBOutlet private weak var inputTextField: UITextField! {
         didSet {
             oldValue?.delegate = nil
             inputTextField.delegate = self
-
+            
             let toolbar = UIToolbar()
             toolbar.items = [
                 UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelInput)),
@@ -37,7 +37,7 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
             inputTextField.inputAccessoryView = toolbar
         }
     }
-
+    
     private var status: String {
         get {
             return statusLabel.text ?? ""
@@ -48,19 +48,19 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
             inputTextField.inputAccessoryView?.sizeToFit()
         }
     }
-
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         status = ""
     }
-
+    
     @objc private func cancelInput() {
         status = ""
         inputTextField.text = ""
         inputTextField.resignFirstResponder()
     }
-
+    
     private static let newIndexPath = [IndexPath(row: 0, section: 0)]
-
+    
     @IBAction private func add() {
         if inputTextField.isFirstResponder {
             if let id = newStudentID, !students.contains(where: { id == $0.id }) {
@@ -81,31 +81,41 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
             inputTextField.becomeFirstResponder()
         }
     }
-
+    
     private var students: [Student] = []
-
+    
+    private var originalRightBarButtonItems: [UIBarButtonItem]?
+    
     override func didMove(toParentViewController parent: UIViewController?) {
         super.didMove(toParentViewController: parent)
         guard let parent = parent else { return }
         parent.navigationItem.rightBarButtonItem = parent.editButtonItem
     }
-
+    
+    override func willMove(toParentViewController newParent: UIViewController?) {
+        if let newParent = newParent {
+            originalRightBarButtonItems = newParent.navigationItem.rightBarButtonItems
+        } else {
+            parent?.navigationItem.rightBarButtonItems = originalRightBarButtonItems
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
         return students.count
     }
-
+    
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudentIDManualInputTabelViewCell", for: indexPath)
         cell.textLabel?.text = "\(students[indexPath.row].id)"
         return cell
     }
-
+    
     private var newStudentID: Int? {
         if let raw = inputTextField?.text?
             .trimmingCharacters(in: .whitespaces) {
@@ -127,7 +137,7 @@ extension StudentIDManualInputViewController: StudentIDInputMethod {
     }
     
     static var isSupported: Bool { return true }
-
+    
     class func instantiate() -> StudentIDInputViewController {
         return studentIDManualInputViewStoryboard
             .instantiateInitialViewController()

@@ -25,7 +25,7 @@ struct BiometricAuthentication {
     static var isTouchID: Bool {
         return !isFaceID && isAvailable
     }
-
+    
     private static var policy: LAPolicy {
         return isAvailable
             ? .deviceOwnerAuthenticationWithBiometrics

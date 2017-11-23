@@ -14,7 +14,7 @@ class StudentIDInputContainerViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationBarColor = arc4random_uniform(2) < 1 ? .burgundy : .gold
     }
-
+    
     private var currentInputMethodIndex = 0 {
         didSet {
             guard oldValue != currentInputMethodIndex else { return }
@@ -22,37 +22,38 @@ class StudentIDInputContainerViewController: UIViewController {
                   to: inputViewControllers[currentInputMethodIndex])
         }
     }
-
+    
     private func cycle(from oldVC: UIViewController, to newVC: UIViewController) {
         // Prepare the two view controllers for the change.
         oldVC.willMove(toParentViewController: nil)
         addChildViewController(newVC)
-
+        
         // Get the start frame of the new view controller and the end frame
         // for the old view controller. Both rectangles are offscreen.
-        newVC.view.frame = .zero
-
+        newVC.view.alpha = 0
+        
         // Queue up the transition animation.
         transition(from: oldVC, to: newVC, duration: 0.25, options: .curveEaseInOut,
                    animations: { [weak self] in
                     newVC.view.frame = oldVC.view.frame
-                    oldVC.view.frame = .zero
+                    newVC.view.alpha = 1
+                    oldVC.view.alpha = 0
                     self?.embedView(newVC.view) },
                    completion: { [weak self] _ in
                     oldVC.removeFromParentViewController()
                     guard let this = self else { return }
                     newVC.didMove(toParentViewController: this) })
     }
-
+    
     private func embedView(_ childView: UIView) {
         containerView.addSubview(childView)
         childView.constraintToSuperview()
     }
-
+    
     private lazy var inputViewControllers =
         StudentIDInputViewControllerTypes.flatMap
             { $0.self.isSupported ? $0.instantiate() : nil }
-
+    
     @IBOutlet weak var containerView: UIView! {
         didSet {
             containerView.constraintToSuperview()
@@ -62,13 +63,13 @@ class StudentIDInputContainerViewController: UIViewController {
             firstVC.didMove(toParentViewController: self)
         }
     }
-
+    
     @IBOutlet weak var switchInputMethodButton: UIBarButtonItem! {
         didSet {
             switchInputMethodButton.isEnabled = inputViewControllers.count > 1
         }
     }
-
+    
     @IBAction func switchInputMethod() {
         let prefix = NSLocalizedStringPrefix()
         let alert = UIAlertController(
@@ -89,9 +90,10 @@ class StudentIDInputContainerViewController: UIViewController {
                     self?.currentInputMethodIndex = index
             }))
         }
+        present(alert, animated: true, completion: nil)
     }
-
+    
     @IBAction func done() {
-
+        
     }
 }

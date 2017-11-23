@@ -10,8 +10,8 @@ import UIKit
 
 var StudentIDInputViewControllerTypes
     : [StudentIDInputViewController.Type] = [
-    StudentIDScannerViewController.self,
-    StudentIDManualInputViewController.self
+        StudentIDScannerViewController.self,
+        StudentIDManualInputViewController.self
 ]
 
 protocol StudentIDInputMethod {

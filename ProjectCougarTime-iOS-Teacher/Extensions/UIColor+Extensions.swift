@@ -12,7 +12,7 @@ extension UIColor {
     static let tianYi: UIColor = #colorLiteral(red: 0.4, green: 0.8, blue: 1, alpha: 1)
     static let burgundy: UIColor = #colorLiteral(red: 0.56, green: 0.07, blue: 0.06, alpha: 1)
     static let gold: UIColor = #colorLiteral(red: 0.97, green: 0.59, blue: 0, alpha: 1)
-
+    
     var isDark: Bool {
         var brightness: CGFloat = 0
         if !(getWhite(&brightness, alpha: nil)
@@ -22,7 +22,7 @@ extension UIColor {
         }
         return brightness < 0.5
     }
-
+    
     var isLight: Bool {
         return !isDark
     }

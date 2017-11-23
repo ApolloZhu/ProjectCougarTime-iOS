@@ -19,6 +19,7 @@ extension UIViewController {
             navBar.barTintColor = color
             let fgColor: UIColor = color.isDark ? .white: .black
             navBar.tintColor = fgColor
+            navBar.titleTextAttributes = [.foregroundColor: fgColor]
             if #available(iOS 11.0, *) {
                 navBar.largeTitleTextAttributes = [.foregroundColor: fgColor]
             }

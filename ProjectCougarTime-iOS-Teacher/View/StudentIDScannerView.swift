@@ -10,17 +10,17 @@ import UIKit
 import AVKit
 
 class StudentIDScannerView: UIView {
-
+    
     // MARK: Capture Preview
-
+    
     override open class var layerClass: Swift.AnyClass {
         return AVCaptureVideoPreviewLayer.self
     }
-
+    
     private var previewLayer: AVCaptureVideoPreviewLayer {
         return layer as! AVCaptureVideoPreviewLayer
     }
-
+    
     var session: AVCaptureSession? {
         get { return previewLayer.session }
         set {
@@ -46,15 +46,15 @@ class StudentIDScannerView: UIView {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
+    
     // MARK: Barcode Stroking
-
+    
     public var barcodeBorderColor: UIColor = .tianYi {
         didSet {
             setNeedsDisplay()
         }
     }
-
+    
     private var path = UIBezierPath() {
         didSet {
             path.lineJoinStyle = .bevel
@@ -62,7 +62,7 @@ class StudentIDScannerView: UIView {
             setNeedsDisplay()
         }
     }
-
+    
     public func didRecognizeMetadataObject(_ objects: [AVMetadataObject]) {
         path = objects.reduce(UIBezierPath()) {
             if let rect = previewLayer
@@ -72,7 +72,7 @@ class StudentIDScannerView: UIView {
             return $0
         }
     }
-
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         barcodeBorderColor.setStroke()
