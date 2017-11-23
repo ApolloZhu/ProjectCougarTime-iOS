@@ -28,6 +28,25 @@ class StudentIDScannerView: UIView {
             previewLayer.videoGravity = .resizeAspectFill
         }
     }
+    
+    @objc private func updateOrientation() {
+        let statusBarOrientation = UIApplication.shared.statusBarOrientation.rawValue
+        if let orientation = AVCaptureVideoOrientation(rawValue: statusBarOrientation),
+            previewLayer.connection?.isVideoOrientationSupported == true {
+            previewLayer.connection?.videoOrientation = orientation
+        }
+    }
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        constraintToSuperview()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateOrientation),
+                                               name: .UIApplicationDidChangeStatusBarOrientation, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
     // MARK: Barcode Stroking
 
@@ -59,11 +78,5 @@ class StudentIDScannerView: UIView {
         super.draw(rect)
         barcodeBorderColor.setStroke()
         path.stroke()
-    }
-    
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-        guard let superview = superview else { return }
-        constraintToSuperview()
     }
 }
