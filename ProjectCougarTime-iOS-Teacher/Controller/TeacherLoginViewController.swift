@@ -106,20 +106,10 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
 
     // Mark: Google Sign In
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if (error == nil) {
-            // Perform any operations on signed in user here.
-            let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken // Safe to send to the server
-            let fullName = user.profile.name
-            let givenName = user.profile.givenName
-            let familyName = user.profile.familyName
-            let email = user.profile.email
-            // ...
-            print(email ?? "No email")
-            loginAfterAuthed()
-        } else {
-            print("\(error.localizedDescription)")
-        }
+        guard let email = user.profile.email,
+            email.hasSuffix("@fcps.edu") || email.hasSuffix("@fcpsschools.net")
+        else { return print(error?.localizedDescription ?? "GIDSignIn Failed") }
+        loginAfterAuthed()
     }
     
     // Mark: Biometric Authentication
@@ -137,6 +127,21 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
             }
         }
     }
+    
+    @IBAction private func showInfoAboutBiometricAuthentication() {
+        
+    }
+
+    // Mark: View Controller Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        guard nil == GIDSignIn.sharedInstance().currentUser
+            else { return login() }
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        useBiometricAuthenticationStackView.isHidden = !BiometricAuthentication.isAvailable
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tryEnableLoginButton()
@@ -149,22 +154,8 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
                                                name: .UIKeyboardWillChangeFrame, object: nil)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        guard GIDSignIn.sharedInstance().currentUser == nil
-            else { return login() }
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = self
-        useBiometricAuthenticationStackView.isHidden = !BiometricAuthentication.isAvailable
-
-    }
-    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self)
-    }
-    
-    @IBAction private func showInfoAboutBiometricAuthentication() {
-        
     }
 }

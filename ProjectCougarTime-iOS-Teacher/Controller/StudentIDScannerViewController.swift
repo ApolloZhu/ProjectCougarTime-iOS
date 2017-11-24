@@ -74,19 +74,6 @@ final class StudentIDScannerViewController: UIViewController {
             self?.dismiss(animated: true, completion: nil)
         }
     }
-    
-    private var recognizedStudents: Set<Student> = [] {
-        didSet {
-            askCheckInStudent()
-        }
-    }
-    
-    private func askCheckInStudent() {
-        for student in recognizedStudents {
-            // FIXME: Actual Classroom
-            student.checkIn(at: "Some Classroom")
-        }
-    }
 }
 
 extension StudentIDScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
@@ -100,8 +87,7 @@ extension StudentIDScannerViewController: AVCaptureMetadataOutputObjectsDelegate
                 AVMetadataMachineReadableCodeObject,
                 let barcode = object.stringValue,
                 let id = Int(barcode) {
-                let student = Student(id: id)
-                recognizedStudents.insert(student)
+                Student(id: id).checkIn(at: "Some Classroom")
             }
         }
     }

@@ -61,7 +61,7 @@ struct BiometricAuthentication {
         }
         contextRef = LAContext()
         contextRef.evaluatePolicy(policy, localizedReason: realReason) { succeeded, error in
-            guard succeeded && error == nil else {
+            guard succeeded && nil == error else {
                 return completionHandler(.failure(error: error))
             }
             completionHandler(.success)
