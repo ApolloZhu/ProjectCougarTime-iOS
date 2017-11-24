@@ -39,6 +39,10 @@ extension Student {
         }
         return false
     }
+
+    static func emptyCheckedIn() {
+        checkedIn = []
+    }
 }
 
 #if os(iOS) || os(watchOS) || os(tvOS)

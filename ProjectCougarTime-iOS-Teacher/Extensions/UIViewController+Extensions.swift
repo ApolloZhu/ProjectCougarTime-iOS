@@ -25,4 +25,19 @@ extension UIViewController {
             }
         }
     }
+
+    func showInfo(title: String?, message: String?, completionHandler: (() -> Void)? = nil) {
+        let prefix = NSLocalizedStringPrefix()
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        let action = UIAlertAction(
+            title: NSLocalizedString("\(prefix).action.title",
+                value: "OK",
+                comment: "User has read the info, dismiss."),
+            style: .default) { _ in alert.dismiss(animated: true, completion: completionHandler)
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
 }
