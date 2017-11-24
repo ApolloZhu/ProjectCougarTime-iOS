@@ -69,6 +69,7 @@
 		52590C581FB22F740053881C /* ProjectCougarTime-iOS-TeacherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ProjectCougarTime-iOS-TeacherUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52590C5C1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCougarTime_iOS_TeacherUITests.swift; sourceTree = "<group>"; };
 		52590C5E1FB22F780053881C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5277BBEE1FC7D6F3009A6EB5 /* Cougar Time.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cougar Time.entitlements"; sourceTree = "<group>"; };
 		527F24C41FC68CF900C7D95E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../../../../../../apollonian/Documents/Git-Repo/ProjectCougarTime-iOS/ProjectCougarTime-iOS-Teacher/Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
 		52C7613C1FBA115100D266D0 /* StudentIDManualInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentIDManualInputViewController.swift; sourceTree = "<group>"; };
 		52C761431FBA33FE00D266D0 /* StudentIDManualInputView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StudentIDManualInputView.storyboard; sourceTree = "<group>"; };
@@ -146,6 +147,7 @@
 		52590C3B1FB22F4F0053881C /* ProjectCougarTime-iOS-Teacher */ = {
 			isa = PBXGroup;
 			children = (
+				5277BBEE1FC7D6F3009A6EB5 /* Cougar Time.entitlements */,
 				52590C6B1FB230660053881C /* Modal */,
 				52590C6C1FB2307C0053881C /* View */,
 				52590C6D1FB230960053881C /* Controller */,
@@ -329,6 +331,11 @@
 					52590C391FB22F4F0053881C = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					52590C4C1FB22F670053881C = {
 						CreatedOnToolsVersion = 9.1;
@@ -745,10 +752,12 @@
 			baseConfigurationReference = 414AC52417A5C379DFF4FFE6 /* Pods-ProjectCougarTime-iOS-Teacher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ProjectCougarTime-iOS-Teacher/Cougar Time.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KZ7D8X3PRK;
 				INFOPLIST_FILE = "$(SRCROOT)/ProjectCougarTime-iOS-Teacher/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.fcps.oaktonhs.ProjectCougarTime-iOS-Teacher";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.fcps.oaktonhs.ProjectCougarTime-Teacher";
 				PRODUCT_NAME = "Cougar Time";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -760,10 +769,12 @@
 			baseConfigurationReference = 271BFA634C7D5E81BF0E317D /* Pods-ProjectCougarTime-iOS-Teacher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ProjectCougarTime-iOS-Teacher/Cougar Time.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KZ7D8X3PRK;
 				INFOPLIST_FILE = "$(SRCROOT)/ProjectCougarTime-iOS-Teacher/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.fcps.oaktonhs.ProjectCougarTime-iOS-Teacher";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.fcps.oaktonhs.ProjectCougarTime-Teacher";
 				PRODUCT_NAME = "Cougar Time";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
