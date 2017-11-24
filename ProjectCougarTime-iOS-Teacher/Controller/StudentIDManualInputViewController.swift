@@ -126,6 +126,10 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return [.portrait, .portraitUpsideDown]
+    }
 }
 
 extension StudentIDManualInputViewController: StudentIDInputMethod {
