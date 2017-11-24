@@ -83,18 +83,22 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
     }
 
     private var originalRightBarButtonItems: [UIBarButtonItem]?
-    
+    private var originalUseSafeArea: Bool?
+
     override func didMove(toParentViewController parent: UIViewController?) {
         super.didMove(toParentViewController: parent)
         guard let parent = parent else { return }
         parent.navigationItem.rightBarButtonItem = parent.editButtonItem
+        (parent as? StudentIDInputContainerViewController)?.useSafeArea = true
     }
     
     override func willMove(toParentViewController newParent: UIViewController?) {
         if let newParent = newParent {
             originalRightBarButtonItems = newParent.navigationItem.rightBarButtonItems
+            originalUseSafeArea = (newParent as? StudentIDInputContainerViewController)?.useSafeArea
         } else {
             parent?.navigationItem.rightBarButtonItems = originalRightBarButtonItems
+            (parent as? StudentIDInputContainerViewController)?.useSafeArea = originalUseSafeArea ?? false
         }
     }
     
@@ -125,10 +129,6 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-    }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return [.portrait, .portraitUpsideDown]
     }
 }
 

@@ -63,6 +63,35 @@ class StudentIDInputContainerViewController: UIViewController {
             firstVC.didMove(toParentViewController: self)
         }
     }
+
+    @available(iOS 11.0, *)
+    private lazy var containerViewSafeAreaConstraints: [NSLayoutConstraint] = [
+        NSLayoutConstraint(item: self.containerView, attribute: .leading, relatedBy: .equal,
+                           toItem: self.view.safeAreaLayoutGuide, attribute: .leading,
+                           multiplier: 1, constant: 0),
+        NSLayoutConstraint(item: self.containerView, attribute: .trailing, relatedBy: .equal,
+                           toItem: self.view.safeAreaLayoutGuide, attribute: .trailing,
+                           multiplier: 1, constant: 0),
+        NSLayoutConstraint(item: self.containerView, attribute: .top, relatedBy: .equal,
+                           toItem: self.view.safeAreaLayoutGuide, attribute: .top,
+                           multiplier: 1, constant: 0),
+        NSLayoutConstraint(item: self.containerView, attribute: .bottom, relatedBy: .equal,
+                           toItem: self.view.safeAreaLayoutGuide, attribute: .bottom,
+                           multiplier: 1, constant: 0)
+    ]
+
+    public var useSafeArea: Bool = false {
+        didSet {
+            guard #available(iOS 11.0, *) else { return }
+            if useSafeArea {
+                containerView.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate(containerViewSafeAreaConstraints)
+            } else {
+                NSLayoutConstraint.deactivate(containerViewSafeAreaConstraints)
+                containerView.translatesAutoresizingMaskIntoConstraints = true
+            }
+        }
+    }
     
     @IBOutlet weak var switchInputMethodButton: UIBarButtonItem! {
         didSet {
