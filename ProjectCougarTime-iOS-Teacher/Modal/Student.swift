@@ -17,6 +17,7 @@ public struct Student {
         self.name = name
         self.imageData = imageData
     }
+    private(set) static var checkedIn = [Student]()
 }
 
 extension Student: Equatable, Hashable {
@@ -30,8 +31,13 @@ extension Student: Equatable, Hashable {
 }
 
 extension Student {
-    func checkIn(at location: String) {
-        print("#\(id) is at \(location)")
+    @discardableResult
+    func checkIn(at location: String) -> Bool {
+        if !Student.checkedIn.contains(self) {
+            Student.checkedIn.insert(self, at: 0)
+            return true
+        }
+        return false
     }
 }
 

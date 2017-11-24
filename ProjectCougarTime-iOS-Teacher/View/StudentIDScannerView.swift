@@ -37,7 +37,7 @@ class StudentIDScannerView: UIView {
     @objc private func updateOrientation() {
         let statusBarOrientation = UIApplication.shared.statusBarOrientation.rawValue
         if let orientation = AVCaptureVideoOrientation(rawValue: statusBarOrientation),
-            previewLayer.connection?.isVideoOrientationSupported == true {
+            true == previewLayer.connection?.isVideoOrientationSupported {
             previewLayer.connection?.videoOrientation = orientation
         }
     }

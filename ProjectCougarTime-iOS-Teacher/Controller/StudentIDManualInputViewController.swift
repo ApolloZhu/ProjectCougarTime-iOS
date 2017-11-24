@@ -63,9 +63,9 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
     
     @IBAction private func add() {
         if inputTextField.isFirstResponder {
-            if let id = newStudentID, !students.contains(where: { id == $0.id }) {
+            if let id = newStudentID {
+                Student(id: id).checkIn(at: "Some Classroom")
                 let prefix = NSLocalizedStringPrefix()
-                students.insert(Student(id: id), at: 0)
                 status = String(format:
                     NSLocalizedString("\(prefix).status", value: "Added %@",
                                       comment: "Display status after added one student with id %@"), "\(id)")
@@ -81,9 +81,7 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
             inputTextField.becomeFirstResponder()
         }
     }
-    
-    private var students: [Student] = []
-    
+
     private var originalRightBarButtonItems: [UIBarButtonItem]?
     
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -106,13 +104,13 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
     
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        return students.count
+        return Student.checkedIn.count
     }
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudentIDManualInputTabelViewCell", for: indexPath)
-        cell.textLabel?.text = "\(students[indexPath.row].id)"
+        cell.textLabel?.text = "\(Student.checkedIn[indexPath.row].id)"
         return cell
     }
     
@@ -122,6 +120,11 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
             return Int(raw)
         }
         return nil
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 }
 
