@@ -82,13 +82,26 @@ extension StudentIDScannerViewController: AVCaptureMetadataOutputObjectsDelegate
                         didOutput metadataObjects: [AVMetadataObject],
                         from connection: AVCaptureConnection) {
         previewView.didRecognizeMetadataObject(metadataObjects)
+        let prefix = NSLocalizedStringPrefix()
         for metadataObject in metadataObjects {
             if let object = metadataObject as?
                 AVMetadataMachineReadableCodeObject,
                 let barcode = object.stringValue,
                 let id = Int(barcode) {
-                Student(id: id).checkIn(at: "Some Classroom")
-            }
+                if Student(id: id).checkIn(at: "Some Classroom") {
+                    showInfo(
+                        title:
+                        NSLocalizedString("\(prefix).title",
+                            value: "New Check In",
+                            comment: "Title of an alert saying checked in a student successfully"),
+                        message:
+                        String(format:
+                            NSLocalizedString("\(prefix).message.format",
+                                value: "Checked in %@",
+                                comment: "Message saying checked in student with id %@."), "\(id)")
+                    )
+                }
+            } // else if its a face...
         }
     }
 }

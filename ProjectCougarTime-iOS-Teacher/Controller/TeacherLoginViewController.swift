@@ -75,6 +75,8 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
             login()
         } else if textField == usernameTextField {
             passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            usernameTextField.becomeFirstResponder()
         }
         return true
     }
@@ -91,7 +93,8 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
             let frameEnd = (info[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
             else { return }
         guard false != (info[UIKeyboardIsLocalUserInfoKey] as AnyObject).boolValue else { return }
-        let firstResponderMaxY = firstResponder?.frame.maxY ?? 0
+        let firstResponderMaxY = firstResponder!.frame.maxY
+        // let firstResponderMaxY = firstResponder?.frame.maxY ?? 0
         UIView.animate(
             withDuration: animationDuration, delay: 0,
             options: UIViewAnimationOptions(rawValue: animationCurveRawValue << 16),
@@ -104,15 +107,38 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
             }, completion: nil)
     }
 
-    // Mark: Google Sign In
+    // MARK: Google Sign In
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        guard let email = user.profile.email,
-            email.hasSuffix("@fcps.edu") || email.hasSuffix("@fcpsschools.net")
-        else { return print(error?.localizedDescription ?? "GIDSignIn Failed") }
+        let prefix = NSLocalizedStringPrefix()
+        guard let email = user?.profile?.email else {
+            return showInfo(
+                title:
+                NSLocalizedString("\(prefix).noEmail.title",
+                    value: "Google Sign In Failed",
+                    comment: "Title of an alert."),
+                message: error?.localizedDescription ??
+                    NSLocalizedString("\(prefix).noEmail.message",
+                        value: "Something went wrong during the process.",
+                        comment: "Message saying something went wrong with google sign in.")
+            )
+        }
+        guard email.hasSuffix("@fcps.edu") || email.hasSuffix("@fcpsschools.net") else {
+            GIDSignIn.sharedInstance().signOut()
+            return showInfo(
+                title:
+                NSLocalizedString("\(prefix).wrongSuffix.title",
+                    value: "Wrong Account",
+                    comment: "Title of an alert when having wrong email suffix."),
+                message:
+                NSLocalizedString("\(prefix).wrongSuffix.message",
+                    value: "Your google account email address doesn't end in fcps.edu or fcpsschools.net!",
+                    comment: "Message saying user google account suffix don't qualify.")
+            )
+        }
         loginAfterAuthed()
     }
     
-    // Mark: Biometric Authentication
+    // MARK: Biometric Authentication
     @IBOutlet weak var useBiometricAuthenticationStackView: UIStackView!
     @IBOutlet private weak var useBiometricAuthenticationSwitch: UISwitch!
     private func useBiometricAuthentication() {
@@ -123,16 +149,26 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
                     self?.loginAfterAuthed()
                 }
             case .failure(error: let error):
-                print(error?.localizedDescription ?? "Unkown ")
+                debugPrint(error?.localizedDescription ?? "Unkown ")
             }
         }
     }
     
     @IBAction private func showInfoAboutBiometricAuthentication() {
-        
+        let prefix = NSLocalizedStringPrefix()
+        showInfo(
+            title:
+            NSLocalizedString("\(prefix).title",
+                value: "What's Biometric Authentication",
+                comment: "Title of an alert explaining what's bio auth"),
+            message:
+            NSLocalizedString("\(prefix).message",
+                value: "You can use your FaceID/TouchID to login.",
+                comment: "Explaination of biometric authentication.")
+        )
     }
 
-    // Mark: View Controller Life Cycle
+    // MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         guard nil == GIDSignIn.sharedInstance().currentUser

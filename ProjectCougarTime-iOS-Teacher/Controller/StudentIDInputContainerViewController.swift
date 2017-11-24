@@ -123,6 +123,11 @@ class StudentIDInputContainerViewController: UIViewController {
     }
     
     @IBAction func done() {
-        
+        showInfo(title: "Damn Backend",
+                 message: "Please go to Dhruv and ask how's things going.")
+    }
+
+    deinit {
+        Student.emptyCheckedIn()
     }
 }

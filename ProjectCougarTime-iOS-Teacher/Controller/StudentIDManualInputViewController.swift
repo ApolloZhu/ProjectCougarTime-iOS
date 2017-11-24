@@ -63,8 +63,7 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
     
     @IBAction private func add() {
         if inputTextField.isFirstResponder {
-            if let id = newStudentID {
-                Student(id: id).checkIn(at: "Some Classroom")
+            if let id = newStudentID, Student(id: id).checkIn(at: "Some Classroom") {
                 let prefix = NSLocalizedStringPrefix()
                 status = String(format:
                     NSLocalizedString("\(prefix).status", value: "Added %@",
