@@ -158,7 +158,7 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
         showInfo(
             title:
             NSLocalizedString("\(prefix).title",
-                value: "What's Biometric Authentication",
+                value: "What's Biometric Authentication?",
                 comment: "Title of an alert explaining what's bio auth"),
             message:
             NSLocalizedString("\(prefix).message",

@@ -159,6 +159,6 @@ class StudentIDInputContainerViewController: UIViewController {
     }
 
     deinit {
-        Student.emptyCheckedIn()
+        Student.endSession()
     }
 }
