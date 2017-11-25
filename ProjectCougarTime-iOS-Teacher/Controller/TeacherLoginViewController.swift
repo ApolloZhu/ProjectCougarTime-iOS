@@ -33,8 +33,9 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
     @IBOutlet private weak var loginButton: UIButton!
     
     private func tryEnableLoginButton() {
-        loginButton.isEnabled = BiometricAuthentication.isAvailable
-            || isTextFieldsFilled
+        loginButton.isEnabled = isTextFieldsFilled
+            || BiometricAuthentication.isAvailable
+            && BiometricAuthentication.isEnabled
     }
     
     @IBAction private func login() {
@@ -73,10 +74,12 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
         textField.resignFirstResponder()
         if loginButton.isEnabled {
             login()
-        } else if textField == usernameTextField {
-            passwordTextField.becomeFirstResponder()
-        } else if textField == passwordTextField {
-            usernameTextField.becomeFirstResponder()
+        } else if false == textField.text?.isEmpty {
+            if textField == usernameTextField {
+                passwordTextField.becomeFirstResponder()
+            } else if textField == passwordTextField {
+                usernameTextField.becomeFirstResponder()
+            }
         }
         return true
     }
@@ -139,8 +142,18 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
     
     // MARK: Biometric Authentication
     @IBOutlet weak var useBiometricAuthenticationStackView: UIStackView!
-    @IBOutlet private weak var useBiometricAuthenticationSwitch: UISwitch!
+    @IBOutlet private weak var useBiometricAuthenticationSwitch: UISwitch! {
+        willSet {
+            newValue?.isOn = BiometricAuthentication.isEnabled
+        }
+    }
+
+    @IBAction func toggleBiometricAuthentication(_ sender: UISwitch) {
+        BiometricAuthentication.isEnabled = sender.isOn
+        tryEnableLoginButton()
+    }
     private func useBiometricAuthentication() {
+        guard BiometricAuthentication.isEnabled else { return }
         BiometricAuthentication.authenticate { state in
             switch state {
             case .success:
