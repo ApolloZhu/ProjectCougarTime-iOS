@@ -99,6 +99,7 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
         guard let parent = parent else { return }
         parent.navigationItem.rightBarButtonItem = parent.editButtonItem
         (parent as? StudentIDInputContainerViewController)?.useSafeArea = true
+        tableView.reloadData()
     }
     
     override func willMove(toParentViewController newParent: UIViewController?) {
@@ -106,6 +107,7 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
             originalRightBarButtonItems = newParent.navigationItem.rightBarButtonItems
             originalUseSafeArea = (newParent as? StudentIDInputContainerViewController)?.useSafeArea
         } else {
+            parent?.setEditing(false, animated: true)
             parent?.navigationItem.rightBarButtonItems = originalRightBarButtonItems
             (parent as? StudentIDInputContainerViewController)?.useSafeArea = originalUseSafeArea ?? false
         }
@@ -126,11 +128,6 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudentIDManualInputTabelViewCell", for: indexPath)
         cell.textLabel?.text = "\(Student.checkedIn[indexPath.row].id)"
         return cell
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
     }
 
     // MARK: Table View Editing
