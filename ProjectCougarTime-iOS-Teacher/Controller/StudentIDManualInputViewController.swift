@@ -149,14 +149,33 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
         inputTextField.resignFirstResponder()
         if editing {
             inputTextField.isEnabled = false
-            titleLabel.text = NSLocalizedString("\(prefix).status",
-                                       value: "Select Ones to DELETE",
-                                       comment: "Label text instructing selection of unwanted.")
+            titleLabel.text =
+                NSLocalizedString("\(prefix).status",
+                    value: "Select Ones to DELETE",
+                    comment: "Label text instructing selection of unwanted.")
+            parent?.editButtonItem.title =
+                NSLocalizedString("\(prefix).editButtonItem.title",
+                    value: "Delete",
+                    comment: "Button title informing deletion of selected table rows.")
         } else {
-            inputTextField.isEnabled = true
+            let sortedIndexPaths = selected.sorted(by: >)
+            selected = []
+            sortedIndexPaths.forEach { Student.cancelCheckIn(index: $0.row) }
+            tableView.deleteRows(at: sortedIndexPaths, with: .automatic)
             titleLabel.text = StudentIDManualInputViewController.titleLabelText
+            inputTextField.isEnabled = true
         }
     }
+
+    private var selected: Set<IndexPath> = []
+
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath)
+    { selected.insert(indexPath) }
+
+    override func tableView(_ tableView: UITableView,
+                            didDeselectRowAt indexPath: IndexPath)
+    { selected.remove(indexPath) }
 }
 
 extension StudentIDManualInputViewController: StudentIDInputMethod {

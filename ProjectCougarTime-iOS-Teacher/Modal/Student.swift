@@ -35,12 +35,25 @@ extension Student {
     func checkIn(at location: String) -> Bool {
         if !Student.checkedIn.contains(self) {
             Student.checkedIn.insert(self, at: 0)
+            // FIXME: Waiting for backend
             return true
         }
         return false
     }
 
-    static func emptyCheckedIn() {
+    func cancelCheckIn() {
+        if let index = Student.checkedIn.index(of: self) {
+            Student.cancelCheckIn(index: index)
+        }
+    }
+
+    static func cancelCheckIn(index: Int) {
+        // FIXME: Waiting for backend.
+        let student = checkedIn.remove(at: index)
+        print("Cancelled \(student)")
+    }
+
+    static func endSession() {
         checkedIn = []
     }
 }
