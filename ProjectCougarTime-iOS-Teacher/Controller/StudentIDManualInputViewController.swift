@@ -48,7 +48,7 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
             inputTextField.inputAccessoryView?.sizeToFit()
         }
     }
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         add()
         return true
@@ -65,7 +65,7 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
     }
     
     private static let newIndexPath = [IndexPath(row: 0, section: 0)]
-
+    
     private var newStudentID: Int? {
         if let raw = inputTextField?.text?
             .trimmingCharacters(in: .whitespaces) {
@@ -93,12 +93,12 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
             inputTextField.becomeFirstResponder()
         }
     }
-
+    
     // MARK: Container View Controller State Preserving
-
+    
     private var originalRightBarButtonItems: [UIBarButtonItem]?
     private var originalUseSafeArea: Bool?
-
+    
     override func didMove(toParentViewController parent: UIViewController?) {
         super.didMove(toParentViewController: parent)
         guard let parent = parent else { return }
@@ -117,7 +117,7 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
             (parent as? StudentIDInputContainerViewController)?.useSafeArea = originalUseSafeArea ?? false
         }
     }
-
+    
     // MARK: Data Display
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -134,7 +134,7 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
         cell.textLabel?.text = "\(Student.checkedIn[indexPath.row].id)"
         return cell
     }
-
+    
     // MARK: Table View Editing
     private static let titleLabelText = NSLocalizedString("StudentIDManualInputViewController.titleLabelText",
                                                           value: "Already Checked In",
@@ -144,7 +144,7 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
             titleLabel?.text = StudentIDManualInputViewController.titleLabelText
         }
     }
-
+    
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         let prefix = NSLocalizedStringPrefix()
@@ -168,13 +168,13 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
             inputTextField.isEnabled = true
         }
     }
-
+    
     private var selected: Set<IndexPath> = []
-
+    
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath)
     { selected.insert(indexPath) }
-
+    
     override func tableView(_ tableView: UITableView,
                             didDeselectRowAt indexPath: IndexPath)
     { selected.remove(indexPath) }

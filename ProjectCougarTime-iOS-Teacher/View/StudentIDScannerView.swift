@@ -10,9 +10,7 @@ import UIKit
 import AVKit
 
 class StudentIDScannerView: UIView {
-    
     // MARK: Capture Preview
-    
     override open class var layerClass: Swift.AnyClass {
         return AVCaptureVideoPreviewLayer.self
     }
@@ -31,12 +29,14 @@ class StudentIDScannerView: UIView {
         set {
             previewLayer.session = newValue
             previewLayer.videoGravity = .resizeAspectFill
+            updateOrientation()
         }
     }
     
     @objc private func updateOrientation() {
-        if let orientation = AVCaptureVideoOrientation.fromDeviceOrientation()
-            ?? AVCaptureVideoOrientation.fromInterfaceOrientation(),
+        let interfaceOrientation = AVCaptureVideoOrientation.fromInterfaceOrientation()
+        let deviceOrientation = AVCaptureVideoOrientation.fromDeviceOrientation()
+        if let orientation = interfaceOrientation ?? deviceOrientation,
             true == previewLayer.connection?.isVideoOrientationSupported {
             previewLayer.connection?.videoOrientation = orientation
         }
@@ -44,10 +44,12 @@ class StudentIDScannerView: UIView {
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        NotificationCenter.default.addObserver(self, selector: #selector(updateOrientation),
-                                               name: .UIDeviceOrientationDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateOrientation),
-                                               name: .UIApplicationDidChangeStatusBarOrientation, object: nil)
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(updateOrientation),
+                       name: .UIDeviceOrientationDidChange, object: nil)
+        nc.addObserver(self, selector: #selector(updateOrientation),
+                       name: .UIApplicationDidChangeStatusBarOrientation, object: nil)
+        updateOrientation()
     }
     
     deinit {

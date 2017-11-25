@@ -40,19 +40,19 @@ extension Student {
         }
         return false
     }
-
+    
     func cancelCheckIn() {
         if let index = Student.checkedIn.index(of: self) {
             Student.cancelCheckIn(index: index)
         }
     }
-
+    
     static func cancelCheckIn(index: Int) {
         // FIXME: Waiting for backend.
         let student = checkedIn.remove(at: index)
         print("Cancelled \(student)")
     }
-
+    
     static func endSession() {
         checkedIn = []
     }

@@ -24,7 +24,7 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
             passwordTextField.delegate = self
         }
     }
-
+    
     private var isTextFieldsFilled: Bool {
         return !(true == usernameTextField.text?.isEmpty
             || true == passwordTextField.text?.isEmpty)
@@ -44,7 +44,7 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
         guard !isTextFieldsFilled else { return loginAfterAuthed() }
         useBiometricAuthentication()
     }
-
+    
     private func loginAfterAuthed() {
         GIDSignIn.sharedInstance().signOut()
         performSegue(withIdentifier: "ShowCheckInVCSegue", sender: loginButton)
@@ -108,7 +108,7 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
                 }
             }, completion: nil)
     }
-
+    
     // MARK: Google Sign In
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         let prefix = NSLocalizedStringPrefix()
@@ -147,11 +147,12 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
             newValue?.isOn = BiometricAuthentication.isEnabled
         }
     }
-
+    
     @IBAction func toggleBiometricAuthentication(_ sender: UISwitch) {
         BiometricAuthentication.isEnabled = sender.isOn
         tryEnableLoginButton()
     }
+    
     private func useBiometricAuthentication() {
         guard BiometricAuthentication.isEnabled else { return }
         BiometricAuthentication.authenticate { state in
@@ -179,7 +180,7 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
                 comment: "Explaination of biometric authentication.")
         )
     }
-
+    
     // MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -189,7 +190,7 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
         GIDSignIn.sharedInstance().uiDelegate = self
         useBiometricAuthenticationStackView.isHidden = !BiometricAuthentication.isAvailable
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tryEnableLoginButton()
@@ -201,9 +202,13 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
                                                selector: #selector(keyBoardWillChangeFrame(_:)),
                                                name: .UIKeyboardWillChangeFrame, object: nil)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return [.portrait, .portraitUpsideDown]
     }
 }

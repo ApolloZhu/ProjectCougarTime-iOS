@@ -13,26 +13,26 @@ extension AVCaptureVideoOrientation {
     static func fromDeviceOrientation(
         _ deviceOrientation: UIDeviceOrientation
         = UIDevice.current.orientation)
-    -> AVCaptureVideoOrientation? {
-        switch deviceOrientation {
-        case .portrait: return .portrait
-        case .portraitUpsideDown: return .portraitUpsideDown
-        case .landscapeLeft: return .landscapeLeft
-        case .landscapeRight: return .landscapeRight
-        default: return nil
-        }
+        -> AVCaptureVideoOrientation? {
+            switch deviceOrientation {
+            case .portrait: return .portrait
+            case .portraitUpsideDown: return .portraitUpsideDown
+            case .landscapeLeft: return .landscapeLeft
+            case .landscapeRight: return .landscapeRight
+            default: return nil
+            }
     }
 
     static func fromInterfaceOrientation(
         _ interfaceOrientation: UIInterfaceOrientation
         = UIApplication.shared.statusBarOrientation)
-    -> AVCaptureVideoOrientation? {
-        switch interfaceOrientation {
-        case .portrait: return .portrait
-        case .portraitUpsideDown: return .portraitUpsideDown
-        case .landscapeLeft: return .landscapeLeft
-        case .landscapeRight: return .landscapeRight
-        default: return nil
-        }
+        -> AVCaptureVideoOrientation? {
+            switch interfaceOrientation {
+            case .portrait: return .portrait
+            case .portraitUpsideDown: return .portraitUpsideDown
+            case .landscapeLeft: return .landscapeLeft
+            case .landscapeRight: return .landscapeRight
+            default: return nil
+            }
     }
 }

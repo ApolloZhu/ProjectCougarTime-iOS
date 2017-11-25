@@ -38,7 +38,7 @@ struct BiometricAuthentication {
     public typealias AuthenticationCompletionHandler = (_ state: State) -> Void
     private static var contextRef: LAContext!
     public static func authenticate(policy: LAPolicy = policy, reason: String? = nil,
-                             completionHandler: @escaping AuthenticationCompletionHandler) {
+                                    completionHandler: @escaping AuthenticationCompletionHandler) {
         let prefix = NSLocalizedStringPrefix()
         var realReason: String
         if let reason = reason {
