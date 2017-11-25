@@ -17,6 +17,7 @@
 		52590C471FB22F510053881C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52590C451FB22F510053881C /* LaunchScreen.storyboard */; };
 		52590C521FB22F6C0053881C /* ProjectCougarTime_iOS_TeacherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52590C511FB22F6C0053881C /* ProjectCougarTime_iOS_TeacherTests.swift */; };
 		52590C5D1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52590C5C1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift */; };
+		5277BBF01FC9205A009A6EB5 /* AVCaptureVideoOrientation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277BBEF1FC9205A009A6EB5 /* AVCaptureVideoOrientation+Extensions.swift */; };
 		527F24C51FC68CF900C7D95E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F24C41FC68CF900C7D95E /* UIView+Extensions.swift */; };
 		52C7613D1FBA115100D266D0 /* StudentIDManualInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7613C1FBA115100D266D0 /* StudentIDManualInputViewController.swift */; };
 		52C761441FBA33FF00D266D0 /* StudentIDManualInputView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C761431FBA33FE00D266D0 /* StudentIDManualInputView.storyboard */; };
@@ -70,6 +71,7 @@
 		52590C5C1FB22F760053881C /* ProjectCougarTime_iOS_TeacherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCougarTime_iOS_TeacherUITests.swift; sourceTree = "<group>"; };
 		52590C5E1FB22F780053881C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5277BBEE1FC7D6F3009A6EB5 /* Cougar Time.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cougar Time.entitlements"; sourceTree = "<group>"; };
+		5277BBEF1FC9205A009A6EB5 /* AVCaptureVideoOrientation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureVideoOrientation+Extensions.swift"; sourceTree = "<group>"; };
 		527F24C41FC68CF900C7D95E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../../../../../../apollonian/Documents/Git-Repo/ProjectCougarTime-iOS/ProjectCougarTime-iOS-Teacher/Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
 		52C7613C1FBA115100D266D0 /* StudentIDManualInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentIDManualInputViewController.swift; sourceTree = "<group>"; };
 		52C761431FBA33FE00D266D0 /* StudentIDManualInputView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StudentIDManualInputView.storyboard; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				52C761451FBA5AB600D266D0 /* UIColor+Extensions.swift */,
 				52C761471FBA759E00D266D0 /* UIViewController+Extensions.swift */,
 				527F24C41FC68CF900C7D95E /* UIView+Extensions.swift */,
+				5277BBEF1FC9205A009A6EB5 /* AVCaptureVideoOrientation+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				52590C3D1FB22F500053881C /* AppDelegate.swift in Sources */,
 				52C761481FBA759E00D266D0 /* UIViewController+Extensions.swift in Sources */,
 				527F24C51FC68CF900C7D95E /* UIView+Extensions.swift in Sources */,
+				5277BBF01FC9205A009A6EB5 /* AVCaptureVideoOrientation+Extensions.swift in Sources */,
 				52FD95441FB272D800ACF280 /* BiometricAuthentication.swift in Sources */,
 				524C3CE91FB3E45500BF2187 /* StudentIDInputContainerViewController.swift in Sources */,
 				52FD953D1FB23C3500ACF280 /* StudentIDScannerView.swift in Sources */,

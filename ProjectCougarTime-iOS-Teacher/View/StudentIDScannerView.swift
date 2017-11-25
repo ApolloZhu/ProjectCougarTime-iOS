@@ -35,8 +35,8 @@ class StudentIDScannerView: UIView {
     }
     
     @objc private func updateOrientation() {
-        let statusBarOrientation = UIApplication.shared.statusBarOrientation.rawValue
-        if let orientation = AVCaptureVideoOrientation(rawValue: statusBarOrientation),
+        if let orientation = AVCaptureVideoOrientation.fromDeviceOrientation()
+            ?? AVCaptureVideoOrientation.fromInterfaceOrientation(),
             true == previewLayer.connection?.isVideoOrientationSupported {
             previewLayer.connection?.videoOrientation = orientation
         }
@@ -44,6 +44,8 @@ class StudentIDScannerView: UIView {
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateOrientation),
+                                               name: .UIDeviceOrientationDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateOrientation),
                                                name: .UIApplicationDidChangeStatusBarOrientation, object: nil)
     }
