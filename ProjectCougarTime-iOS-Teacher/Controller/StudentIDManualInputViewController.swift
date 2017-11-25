@@ -48,6 +48,11 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
             inputTextField.inputAccessoryView?.sizeToFit()
         }
     }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        add()
+        return true
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         status = ""

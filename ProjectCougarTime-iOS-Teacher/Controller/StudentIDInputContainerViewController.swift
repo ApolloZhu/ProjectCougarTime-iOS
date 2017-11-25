@@ -141,6 +141,7 @@ class StudentIDInputContainerViewController: UIViewController {
                     self?.currentInputMethodIndex = index
             }))
         }
+        alert.popoverPresentationController?.barButtonItem = switchInputMethodButton
         present(alert, animated: true, completion: nil)
     }
 
