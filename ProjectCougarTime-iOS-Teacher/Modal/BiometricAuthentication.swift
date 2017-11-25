@@ -68,3 +68,11 @@ struct BiometricAuthentication {
         }
     }
 }
+
+extension BiometricAuthentication {
+    static let userDefaultsKey = "BiometricAuthentication"
+    static var isEnabled: Bool {
+        get { return UserDefaults.standard.bool(forKey: userDefaultsKey) }
+        set { UserDefaults.standard.set(newValue, forKey: userDefaultsKey) }
+    }
+}
