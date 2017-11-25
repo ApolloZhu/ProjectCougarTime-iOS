@@ -60,6 +60,14 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
     }
     
     private static let newIndexPath = [IndexPath(row: 0, section: 0)]
+
+    private var newStudentID: Int? {
+        if let raw = inputTextField?.text?
+            .trimmingCharacters(in: .whitespaces) {
+            return Int(raw)
+        }
+        return nil
+    }
     
     @IBAction private func add() {
         if inputTextField.isFirstResponder {
@@ -81,6 +89,8 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
         }
     }
 
+    // MARK: Container View Controller State Preserving
+
     private var originalRightBarButtonItems: [UIBarButtonItem]?
     private var originalUseSafeArea: Bool?
 
@@ -100,7 +110,8 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
             (parent as? StudentIDInputContainerViewController)?.useSafeArea = originalUseSafeArea ?? false
         }
     }
-    
+
+    // MARK: Data Display
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -116,18 +127,35 @@ final class StudentIDManualInputViewController: UITableViewController, UITextFie
         cell.textLabel?.text = "\(Student.checkedIn[indexPath.row].id)"
         return cell
     }
-    
-    private var newStudentID: Int? {
-        if let raw = inputTextField?.text?
-            .trimmingCharacters(in: .whitespaces) {
-            return Int(raw)
-        }
-        return nil
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+
+    // MARK: Table View Editing
+    private static let titleLabelText = NSLocalizedString("StudentIDManualInputViewController.titleLabelText",
+                                                          value: "Already Checked In",
+                                                          comment: "Default title text for manual input")
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel?.text = StudentIDManualInputViewController.titleLabelText
+        }
+    }
+
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        let prefix = NSLocalizedStringPrefix()
+        inputTextField.resignFirstResponder()
+        if editing {
+            inputTextField.isEnabled = false
+            titleLabel.text = NSLocalizedString("\(prefix).status",
+                                       value: "Select Ones to DELETE",
+                                       comment: "Label text instructing selection of unwanted.")
+        } else {
+            inputTextField.isEnabled = true
+            titleLabel.text = StudentIDManualInputViewController.titleLabelText
+        }
     }
 }
 
