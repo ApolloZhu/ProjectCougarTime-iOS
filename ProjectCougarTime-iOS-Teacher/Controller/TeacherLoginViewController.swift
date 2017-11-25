@@ -93,8 +93,7 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
             let frameEnd = (info[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
             else { return }
         guard false != (info[UIKeyboardIsLocalUserInfoKey] as AnyObject).boolValue else { return }
-        let firstResponderMaxY = firstResponder!.frame.maxY
-        // let firstResponderMaxY = firstResponder?.frame.maxY ?? 0
+        guard let firstResponderMaxY = firstResponder?.frame.maxY else { return }
         UIView.animate(
             withDuration: animationDuration, delay: 0,
             options: UIViewAnimationOptions(rawValue: animationCurveRawValue << 16),
@@ -190,8 +189,8 @@ class TeacherLoginViewController: UIViewController, UITextFieldDelegate, GIDSign
                                                name: .UIKeyboardWillChangeFrame, object: nil)
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
 }

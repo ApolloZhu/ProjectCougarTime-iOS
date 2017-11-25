@@ -59,7 +59,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentIDManualInputTabelViewCell" editingAccessoryType="checkmark" textLabel="3F4-Df-UwI" style="IBUITableViewCellStyleDefault" id="4Ig-UY-afh">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentIDManualInputTabelViewCell" textLabel="3F4-Df-UwI" style="IBUITableViewCellStyleDefault" id="4Ig-UY-afh">
                                 <rect key="frame" x="0.0" y="148" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Ig-UY-afh" id="7YJ-Me-7al">
@@ -84,6 +84,7 @@
                     </tableView>
                     <connections>
                         <outlet property="inputTextField" destination="LnV-6k-6w3" id="qha-Zo-xC6"/>
+                        <outlet property="titleLabel" destination="yGF-Te-Kuq" id="R4J-PP-i3I"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9J-p6-UyI" userLabel="First Responder" sceneMemberID="firstResponder"/>

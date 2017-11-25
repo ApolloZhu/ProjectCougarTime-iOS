@@ -10,19 +10,7 @@ import UIKit
 import Foundation
 
 class StudentIDInputContainerViewController: UIViewController {
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationBarColor = arc4random_uniform(2) < 1 ? .burgundy : .gold
-    }
-    
-    private var currentInputMethodIndex = 0 {
-        didSet {
-            guard oldValue != currentInputMethodIndex else { return }
-            cycle(from: inputViewControllers[oldValue],
-                  to: inputViewControllers[currentInputMethodIndex])
-        }
-    }
-    
+    // MARK: Imeplement Container
     private func cycle(from oldVC: UIViewController, to newVC: UIViewController) {
         // Prepare the two view controllers for the change.
         oldVC.willMove(toParentViewController: nil)
@@ -50,10 +38,6 @@ class StudentIDInputContainerViewController: UIViewController {
         childView.constraintToSuperview()
     }
     
-    private lazy var inputViewControllers =
-        StudentIDInputViewControllerTypes.flatMap
-            { $0.self.isSupported ? $0.instantiate() : nil }
-    
     @IBOutlet weak var containerView: UIView! {
         didSet {
             containerView.constraintToSuperview()
@@ -64,32 +48,70 @@ class StudentIDInputContainerViewController: UIViewController {
         }
     }
 
-    @available(iOS 11.0, *)
+    // MARK: Propagate to Child View Controllers
+
+    // To avoid StackOverflowException
+    private var didLoadView = false
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        didLoadView = true
+    }
+
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        childViewControllers.forEach { $0.setEditing(editing, animated: animated) }
+    }
+
+    @available(iOS 11, *)
     private lazy var containerViewSafeAreaConstraints: [NSLayoutConstraint] = [
-        NSLayoutConstraint(item: self.containerView, attribute: .leading, relatedBy: .equal,
-                           toItem: self.view.safeAreaLayoutGuide, attribute: .leading,
+        NSLayoutConstraint(item: containerView, attribute: .leading, relatedBy: .equal,
+                           toItem: view.safeAreaLayoutGuide, attribute: .leading,
                            multiplier: 1, constant: 0),
-        NSLayoutConstraint(item: self.containerView, attribute: .trailing, relatedBy: .equal,
-                           toItem: self.view.safeAreaLayoutGuide, attribute: .trailing,
+        NSLayoutConstraint(item: containerView, attribute: .trailing, relatedBy: .equal,
+                           toItem: view.safeAreaLayoutGuide, attribute: .trailing,
                            multiplier: 1, constant: 0),
-        NSLayoutConstraint(item: self.containerView, attribute: .top, relatedBy: .equal,
-                           toItem: self.view.safeAreaLayoutGuide, attribute: .top,
+        NSLayoutConstraint(item: containerView, attribute: .top, relatedBy: .equal,
+                           toItem: view.safeAreaLayoutGuide, attribute: .top,
                            multiplier: 1, constant: 0),
-        NSLayoutConstraint(item: self.containerView, attribute: .bottom, relatedBy: .equal,
-                           toItem: self.view.safeAreaLayoutGuide, attribute: .bottom,
+        NSLayoutConstraint(item: containerView, attribute: .bottom, relatedBy: .equal,
+                           toItem: view.safeAreaLayoutGuide, attribute: .bottom,
                            multiplier: 1, constant: 0)
     ]
 
     public var useSafeArea: Bool = false {
         didSet {
-            guard #available(iOS 11.0, *) else { return }
+            if didLoadView {
+                useSafeAreaAccordingly()
+            }
+        }
+    }
+
+    private func useSafeAreaAccordingly() {
+        if #available(iOS 11.0, *) {
             if useSafeArea {
                 containerView.translatesAutoresizingMaskIntoConstraints = false
                 NSLayoutConstraint.activate(containerViewSafeAreaConstraints)
             } else {
-                NSLayoutConstraint.deactivate(containerViewSafeAreaConstraints)
+                if true == containerViewSafeAreaConstraints.first?.isActive {
+                    NSLayoutConstraint.deactivate(containerViewSafeAreaConstraints)
+                }
                 containerView.translatesAutoresizingMaskIntoConstraints = true
             }
+        }
+    }
+
+    // MARK: Input Methods
+
+    private lazy var inputViewControllers =
+        StudentIDInputViewControllerTypes.flatMap
+            { $0.self.isSupported ? $0.instantiate() : nil }
+
+    private var currentInputMethodIndex = 0 {
+        didSet {
+            guard oldValue != currentInputMethodIndex else { return }
+            cycle(from: inputViewControllers[oldValue],
+                  to: inputViewControllers[currentInputMethodIndex])
         }
     }
     
@@ -121,8 +143,17 @@ class StudentIDInputContainerViewController: UIViewController {
         }
         present(alert, animated: true, completion: nil)
     }
+
+    // MARK: Check In Process
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationBarColor = arc4random_uniform(2) < 1 ? .burgundy : .gold
+        useSafeAreaAccordingly()
+    }
     
     @IBAction func done() {
+        // FIXME: Waiting for backend
         showInfo(title: "Damn Backend",
                  message: "Please go to Dhruv and ask how's things going.")
     }
